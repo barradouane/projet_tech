@@ -1,0 +1,95 @@
+/* Section Actualités */
+.actualites {
+    padding: 40px 20px;
+    background-color: #f0f8ff; /* Bleu clair pastel */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .actualites-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #005f99; /* Bleu profond */
+    margin-bottom: 30px;
+  }
+  
+  /* Conteneur des actualités */
+  .actualites-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Carte d'actualité */
+  .actualite-card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #d6e4ec; /* Bordure légère */
+  }
+  
+  .actualite-card:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+    box-shadow: 0 8px 15px rgba(0, 95, 153, 0.2); /* Ombre douce */
+  }
+  
+  /* Superposition pour le titre */
+  .actualite-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 95, 153, 0.8); /* Bleu profond semi-transparent */
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Contenu de l'actualité affiché après clic */
+  .actualite-content {
+    padding: 15px;
+    background-color: white;
+    color: #00334e; /* Bleu foncé pour un bon contraste */
+    border-top: 2px solid #005f99; /* Ligne de séparation */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: max-height 0.3s ease;
+  }
+  
+  .actualite-date {
+    font-size: 0.9rem;
+    color: #006dba; /* Bleu ciel */
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  
+  .actualite-description {
+    margin-top: 5px;
+  }
+  
+  /* Transition pour une meilleure fluidité */
+  .actualite-card.active .actualite-overlay {
+    display: none; /* Cache le titre superposé après clic */
+  }
+  
+  .actualite-card.active {
+    height: auto;
+    min-height: 300px;
+  }
+  
+  /* Résolution des conflits visuels */
+  .actualite-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px 15px 0 0;
+  }
+  

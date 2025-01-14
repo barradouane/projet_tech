@@ -1,0 +1,50 @@
+.fixed-header {
+    position: fixed; /* Fixe le composant en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur de la page */
+    z-index: 1000; /* Assure que le header et le navbar sont au-dessus du contenu */
+    background-color: #fff; /* Fond blanc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre sous le header pour effet de profondeur */
+    padding-bottom: 10px; /* Un petit espacement en bas pour séparer le header et navbar */
+  }
+  
+  header {
+    padding: 10px 0; /* Padding pour un espacement agréable */
+  }
+  
+  body {
+    margin-top: 150px; /* Ajout d'un espacement pour compenser la hauteur du header et du navbar */
+  }
+  @media (max-width: 768px) {
+    .fixed-header {
+      padding: 10px; /* Réduit les marges internes pour les petits écrans */
+      flex-direction: column; /* Dispose les éléments verticalement */
+    }
+  
+    header {
+      flex-direction: column; /* Empile les éléments dans le header */
+      align-items: center; /* Centre tous les éléments */
+      text-align: center; /* Centre le texte pour les petits écrans */
+    }
+  
+    body {
+      margin-top: 120px; /* Ajuste l'espacement en fonction de la taille du header réduit */
+    }
+  }
+  
+  /* Responsive pour très petits écrans (smartphones en mode portrait) */
+  @media (max-width: 480px) {
+    .fixed-header {
+      padding: 8px; /* Réduit davantage l'espacement */
+    }
+  
+    header {
+      font-size: 0.9rem; /* Réduit la taille du texte dans le header */
+    }
+  
+    body {
+      margin-top: 100px; /* Ajuste encore la marge pour compenser */
+    }
+  }
+  

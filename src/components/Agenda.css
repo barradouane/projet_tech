@@ -1,0 +1,144 @@
+.agenda {
+    padding: 20px;
+    background-color: #f0f8ff; /* Fond bleu très clair pour s'harmoniser avec le reste de la page */
+    color: #333; /* Texte sombre pour le contraste */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    width: 80%; /* Largeur de l'agenda */
+    max-width: 800px; /* Limite maximale pour éviter qu'il ne devienne trop large */
+    margin: 40px auto; /* Centrer l'agenda horizontalement et ajouter un espacement vertical */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet de profondeur */
+}
+
+.agenda h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004d75; /* Titre en bleu foncé */
+}
+
+/* Formulaire d'ajout d'événements */
+.event-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.event-form input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Bordure claire */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f9f9f9; /* Fond clair pour les inputs */
+    color: #333; /* Texte sombre pour les champs de saisie */
+}
+
+.event-form button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Fond bleu pour les boutons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event-form button:hover {
+    background-color: #0056b3; /* Changer de couleur au survol */
+}
+
+/* Détails des événements */
+.event-details {
+    margin-top: 20px;
+}
+
+.event-details h3 {
+    margin-bottom: 10px;
+    color: #333; /* Texte des événements en sombre */
+}
+
+.event-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-details li {
+    background-color: #f9f9f9; /* Fond très clair pour chaque événement */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd; /* Bordure claire autour de chaque événement */
+}
+
+.event-details button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ff5722; /* Fond orange pour les boutons de modification/suppression */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event-details button:hover {
+    background-color: #d84f1a; /* Changer de couleur au survol */
+}
+
+/* Style du calendrier */
+.react-calendar {
+    background-color: #fff; /* Fond blanc */
+    color: #333; /* Texte sombre */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9; /* Fond clair pour la navigation */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Espacement sous la barre de navigation */
+}
+
+.react-calendar__navigation button {
+    background: none;
+    color: #004d75; /* Bleu foncé */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.react-calendar__navigation span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #004d75; /* Texte bleu foncé */
+}
+
+.react-calendar__tile {
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 5px;
+}
+
+.react-calendar__tile--now {
+    background-color: #ffeb3b;
+    color: black;
+}
+
+.react-calendar__tile--active {
+    background-color: #007bff;
+    color: white;
+}

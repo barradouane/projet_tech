@@ -1,0 +1,129 @@
+/* Style global du NavBar */
+.navbar {
+    background-color: #004d75; /* Bleu foncé harmonique */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
+    position: fixed; /* Fixe la barre de navigation */
+    top: 140px; /* Positionne la barre en dessous du header (ajustez selon la hauteur réelle du header) */
+    left: 0;
+    width: 100%; /* Prend toute la largeur */
+    z-index: 999; /* Assure que la barre est au-dessus d'autres éléments sauf le header */
+    transition: top 0.3s; /* Animation pour la transition du menu */
+}
+
+/* Liste principale */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Liens principaux */
+.nav-item {
+    position: relative; /* Nécessaire pour la dropdown */
+}
+
+.nav-link {
+    color: #fff; /* Texte blanc */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px; /* Ajoute un arrondi */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #006aa8; /* Bleu clair au survol */
+    color: #ffffff; /* Texte reste blanc */
+}
+
+/* Dropdown */
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* Place le menu juste sous l'élément parent */
+    left: 0;
+    background-color: #ffffff; /* Fond blanc pour le menu déroulant */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour le dropdown */
+    border-radius: 5px;
+    display: none; /* Masque le menu par défaut */
+    padding: 5px 0;
+    z-index: 1000; /* Assure la visibilité au-dessus d'autres éléments */
+    display: flex; /* Affiche les éléments horizontalement */
+    flex-direction: row; /* Arrange les éléments en ligne */
+}
+
+.dropdown-item {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-link {
+    display: block;
+    color: #333; /* Texte sombre */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Ajoute un arrondi */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+.dropdown-link:hover {
+    background-color: #f0f0f0; /* Fond clair au survol */
+    color: #004d75; /* Texte bleu */
+}
+
+/* Affiche le dropdown au survol */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: flex; /* Change de display pour afficher le menu horizontalement */
+}
+
+/* Ajout d'un espacement sous la navbar pour éviter que le contenu soit masqué */
+body {
+    padding-top: 200px; /* Ajuste selon la hauteur totale du header et navbar */
+    margin: 0;
+}
+
+/* Styles supplémentaires pour harmonisation */
+body, html {
+    font-family: Arial, sans-serif; /* Police claire et lisible */
+    background-color: #f8f9fa; /* Fond clair pour contraste */
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive design pour petits écrans */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px; /* Réduit l'espacement interne */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: center; /* Centre les éléments */
+    }
+
+    .nav-link {
+        font-size: 1.2rem; /* Agrandit les liens pour une meilleure lisibilité */
+        padding: 10px 20px;
+    }
+
+    .dropdown-menu {
+        position: static; /* Rend le menu statique pour s'afficher correctement */
+        width: 100%; /* Prend toute la largeur */
+        text-align: center;
+        flex-direction: column; /* Menu empilé verticalement sur petits écrans */
+    }
+}
+/* Affiche le dropdown au clic */
+.dropdown-menu {
+    display: none;
+    flex-direction: row; /* Affichage horizontal */
+}
+
+.dropdown-menu.show {
+    display: flex; /* Affiche le menu */
+}
