@@ -30,22 +30,22 @@ export default function AdminDashboard() {
           </h3>
           <hr />
           <motion.div
-            className="bg-gray-50 hover:bg-light p-4 text-center text-secondary font-medium rounded-lg shadow-md cursor-pointer "
+            className="bg-gray-50 hover:bg-light p-4 text-center text-secondary sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
             whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/viewStudents")}
+            onClick={() => handleNavigation("/posts_for_admin")}
           >
             Consulter la liste des posts
           </motion.div>
           
           <motion.div
-            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center font-medium rounded-lg shadow-md cursor-pointer "
+            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
             whileHover={{ scale: 1.05 }}
             onClick={() => handleNavigation("/addData")}
           >
             Création de post
           </motion.div>
           <motion.div
-            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center font-medium rounded-lg shadow-md cursor-pointer "
+            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
             whileHover={{ scale: 1.05 }}
             onClick={() => handleNavigation("/deleteData")}
           >
@@ -54,20 +54,20 @@ export default function AdminDashboard() {
         </div>
 
         
-        <div className="bg-gradient-to-bl from-primary to-secondary sm:mb-0 mb-16 border-secondary border-[1px]  p-8 rounded-2xl shadow-xl space-y-6">
+        <div className="bg-gradient-to-bl from-primary to-secondary sm:mb-0 mb-16 sm:text-[20px] text-[18px] border-secondary border-[1px]  p-8 rounded-2xl shadow-xl space-y-6">
           <h3 className="text-2xl font-semibold text-white text-left">
             Gestion des étudiants
           </h3>
           <hr/>
           <motion.div
-            className="bg-gray-50 text-center text-secondary font-medium p-4 rounded-lg shadow-md cursor-pointer hover:bg-light"
+            className="bg-gray-50 text-center text-secondary font-medium p-4 sm:text-[20px] text-[18px] rounded-lg shadow-md cursor-pointer hover:bg-light"
             whileHover={{ scale: 1.05 }}
             onClick={() => handleNavigation("/addStudent")}
           >
             Consulter la liste des étudiants
           </motion.div>
           <motion.div
-            className="bg-gray-50 text-secondary p-4 text-center font-medium rounded-lg shadow-md cursor-pointer hover:bg-light"
+            className="bg-gray-50 text-secondary p-4 text-center font-medium sm:text-[20px] text-[18px] rounded-lg shadow-md cursor-pointer hover:bg-light"
             whileHover={{ scale: 1.05 }}
             onClick={() => handleNavigation("/viewStudents")}
           >

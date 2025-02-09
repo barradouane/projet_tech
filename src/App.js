@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Contacts from './components/Contacts';
 import AddData from './components/AddData';
 import AdminSpace from './components/AdminSpace.js';
+import PostsForAdmin from './components/PostsForAdmin';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/sign-up" element={<SignUpPage />}/>
       <Route path="/contacts" element={<Contacts />}/>
       <Route path='/addData' element={<AddData />}/>
+      <Route path='posts_for_admin' element={<PostsForAdmin />}/>
       </Routes>
       </BrowserRouter>
   );
