@@ -27,6 +27,18 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
     $pdo->exec($sql);
+
+// Table de contacts                                                                                                        
+    $sql = "CREATE TABLE contacts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(50) NOT NULL,
+        prenom VARCHAR(50) NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL,
+        telephone VARCHAR(20) NOT NULL,
+        service VARCHAR(100) NOT NULL,
+        niveau_de_formation VARCHAR(20) DEFAULT NULL
+    );";
+    $pdo->exec($sql);
     
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
