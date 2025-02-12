@@ -8,6 +8,9 @@ export default function PostsForAdmin() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
+
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -16,6 +19,9 @@ export default function PostsForAdmin() {
     filterPosts();
   }, [filterType, posts]);
 
+
+
+  // Pour faire l'affichage 
   const fetchPosts = async () => {
     try {
       const response = await fetch("http://localhost:8000/get_data.php");
@@ -25,12 +31,16 @@ export default function PostsForAdmin() {
       const data = await response.json();
       setPosts([...data.actualites, ...data.evenements]);
     } catch (error) {
-      console.error("Erreur :", error);
+      console.log("Erreur :", error);
       setError("Une erreur s'est produite lors du chargement des données.");
     } finally {
       setLoading(false);
     }
   };
+
+  //Pour faire la suppression
+  
+  
 
   const filterPosts = () => {
     if (filterType === "all") {
@@ -79,8 +89,9 @@ export default function PostsForAdmin() {
           <tr className="bg-gradient-to-r from-secondary to-primary  border-secondarybg-gray-2">
             <th className="border border-secondary p-2 text-light ">Titre</th>
             <th className="border border-secondary p-2 text-light">Description</th>
-            <th className="border border-secondary p-2 text-light">Type</th>
+
             <th className="border border-secondary p-2 text-light">Date</th>
+            <th className="border border-secondary p-2 text-light"></th>
           </tr>
         </thead>
         <tbody>
@@ -88,10 +99,13 @@ export default function PostsForAdmin() {
             <tr key={index} className="hover:bg-gray-100">
               <td className="border border-secondary p-2">{post.titre}</td>
               <td className="border border-secondary p-2">{post.description}</td>
-              <td className="border border-secondary p-2">
-                {post.type === "actualite" ? "Actualité" : "Evénement"}
-              </td>
+              
               <td className="border border-secondary p-2">{post.date}</td>
+              <td className="border border-secondary p-2">
+                <button className="hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]">Supprimer</button>
+
+
+              </td>
             </tr>
           ))}
         </tbody>

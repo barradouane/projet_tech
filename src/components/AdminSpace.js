@@ -44,13 +44,7 @@ export default function AdminDashboard() {
           >
             Création de post
           </motion.div>
-          <motion.div
-            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/deleteData")}
-          >
-            Suppression de post
-          </motion.div>
+          
         </div>
 
         
