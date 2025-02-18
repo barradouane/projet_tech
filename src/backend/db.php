@@ -29,7 +29,7 @@ try {
     $pdo->exec($sql);
 
 // Table de contacts                                                                                                        
-    $sql = "CREATE TABLE contacts (
+    $sql = "CREATE TABLE if not exists contacts (
         id INT AUTO_INCREMENT PRIMARY KEY,
         nom VARCHAR(50) NOT NULL,
         prenom VARCHAR(50) NOT NULL,
@@ -41,6 +41,8 @@ try {
     $pdo->exec($sql);
     
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    
+    header('Content-Type: application/json');
+    echo json_encode(['error' => $e->getMessage()]);
 }
 ?>

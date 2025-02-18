@@ -98,11 +98,12 @@ export default function PostsForAdmin() {
           {filteredPosts.map((post, index) => (
             <tr key={index} className="hover:bg-gray-100">
               <td className="border border-secondary p-2">{post.titre}</td>
-              <td className="border border-secondary p-2">{post.description}</td>
+              <td className="w-[50%] border border-secondary p-2">{post.description}</td>
               
               <td className="border border-secondary p-2">{post.date}</td>
-              <td className="border border-secondary p-2">
-                <button className="hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]">Supprimer</button>
+              <td className="w-[14%] border border-secondary p-2">
+                <button className="sm:w-[50%] hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]">Supprimer</button>
+                <button className="sm:w-[50%] hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]">Modifier</button>
 
 
               </td>

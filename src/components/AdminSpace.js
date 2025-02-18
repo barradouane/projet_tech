@@ -22,7 +22,7 @@ export default function AdminDashboard() {
       
 
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:w-[90%] w-[85%] sm:mt-48 mt-36">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:w-[90%] w-[85%] sm:mt-48 mt-36">
         
         <div className="bg-gradient-to-bl from-primary to-secondary border-secondary border-[1px] p-8 rounded-2xl shadow-xl space-y-6">
           <h3 className="text-2xl font-semibold text-white text-left">
@@ -42,7 +42,30 @@ export default function AdminDashboard() {
             whileHover={{ scale: 1.05 }}
             onClick={() => handleNavigation("/addData")}
           >
-            Création de post
+            Créer un post
+          </motion.div>
+          
+        </div>
+
+        <div className="bg-gradient-to-bl from-primary to-secondary border-secondary border-[1px] p-8 rounded-2xl shadow-xl space-y-6">
+          <h3 className="text-2xl font-semibold text-white text-left">
+            Gestion des contacts
+          </h3>
+          <hr />
+          <motion.div
+            className="bg-gray-50 hover:bg-light p-4 text-center text-secondary sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
+            whileHover={{ scale: 1.05 }}
+            onClick={() => handleNavigation("/contacts_for_admin")}
+          >
+            Consulter la liste des contacts
+          </motion.div>
+          
+          <motion.div
+            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
+            whileHover={{ scale: 1.05 }}
+            onClick={() => handleNavigation("/addData")}
+          >
+            Créer un contact
           </motion.div>
           
         </div>
@@ -56,24 +79,18 @@ export default function AdminDashboard() {
           <motion.div
             className="bg-gray-50 text-center text-secondary font-medium p-4 sm:text-[20px] text-[18px] rounded-lg shadow-md cursor-pointer hover:bg-light"
             whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/addStudent")}
+            onClick={() => handleNavigation("/students-for-admin")}
           >
             Consulter la liste des étudiants
           </motion.div>
           <motion.div
             className="bg-gray-50 text-secondary p-4 text-center font-medium sm:text-[20px] text-[18px] rounded-lg shadow-md cursor-pointer hover:bg-light"
             whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/viewStudents")}
+            onClick={() => handleNavigation("/addStudent")}
           >
             Ajouter un étudiant
           </motion.div>
-          <motion.div
-            className="bg-gray-50 text-secondary text-center font-medium p-4 rounded-lg shadow-md cursor-pointer hover:bg-light"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/manageStudents")}
-          >
-            Gérer les étudiants
-          </motion.div>
+          
         </div>
       </div>
     </div>

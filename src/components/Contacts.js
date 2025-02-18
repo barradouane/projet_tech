@@ -15,7 +15,7 @@ export default function Contacts() {
     const niveaux_de_formation = ["CP1", "CP2", "ING1", "ING2"];
 
     return (
-        <div className="flex flex-col items-center bg-gradient-to-tl from-light to-white pt-36 pb-24 min-h-screen">
+        <div className="flex flex-col items-center bg-gradient-to-tl from-light to-white pt-36 min-h-screen pb-20">
             <Navbar />
             <h1 className="sm:text-4xl text-3xl font-semibold text-secondary sm:mb-6 mb-0">
                 Contacts pédagogiques
