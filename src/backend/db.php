@@ -21,7 +21,7 @@ try {
         type ENUM('actualite', 'evenement') NOT NULL,
         titre VARCHAR(255) NOT NULL,
         description TEXT NOT NULL,
-        date DATE NOT NULL,
+        date DATE DEFAULT NULL,
         image VARCHAR(255) DEFAULT NULL,
         plus_de_details TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
