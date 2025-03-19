@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logoImage from "../assets/images/logo.png";
 
-export default function PostsForAdmin() {
+export default function PostsForEditor() {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [filterType, setFilterType] = useState("all");
@@ -59,7 +59,7 @@ export default function PostsForAdmin() {
       <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
       {/* Logo */}
       <img src={logoImage} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
-<h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace administratif</h2>
+<h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace d'édition</h2>
 </nav>
 <div className="mt-32">
       <h2 className="sm:text-4xl text-3xl font-semibold mb-6 text-secondary text-center">Liste des Posts</h2>

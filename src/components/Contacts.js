@@ -9,10 +9,9 @@ export default function Contacts() {
         { nom: "Service relations entreprises" },
         { nom: "Service internationales" },
         { nom: "Vie associative" },
-        { nom: "Vie etudiante-photoss" }
     ];
 
-    const niveaux_de_formation = ["CP1", "CP2", "ING1", "ING2"];
+    const niveaux_de_formation = ["CP1", "CP2", "ING1", "ING2","ING3"];
 
     return (
         <div className="flex flex-col items-center bg-gradient-to-tl from-light to-white pt-36 min-h-screen pb-20">

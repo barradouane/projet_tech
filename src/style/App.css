@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* Personnaliser la scrollbar du menu services */
+ul::-webkit-scrollbar {
+  width: 4px; 
+}
+
+ul::-webkit-scrollbar-track {
+  background: var(--light); 
+  border-radius: 30px; 
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: #015791; 
+  border-radius: 30px; 
+}
+
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: #DEF3FF; 
+}
+

@@ -7,27 +7,42 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Contacts from './components/Contacts';
 import AddData from './components/AddData';
 import AdminSpace from './components/AdminSpace.js';
-import PostsForAdmin from './components/PostsForAdmin';
+import PostsForEditor from './components/PostsForEditor';
 import Events from './components/Events';
 import EventDetails from './components/EventDetails';
 import News from './components/News';
 import NewsDetails from './components/NewsDetails';
+import EditorSpace from './components/EditorSpace';
+import Stage from './components/Stage';
+import Sport from './components/Sport';
+import AddContact from './components/addContact';
+import ContactsForEditor from './components/ContactsForEditor';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-      {/* <Route path="/" element={<SignInPage />} /> */}
+      {/* Pages d'authentification */}
       <Route path="/" element={<SignInPage />} />
-      <Route path="/student-space" element={<StudentSpace />} />
       <Route path="/sign-up" element={<SignUpPage />}/>
-      <Route path="/contacts" element={<Contacts />}/>
-      <Route path='/addData' element={<AddData />}/>
-      <Route path='posts_for_admin' element={<PostsForAdmin />}/>
+      {/* Différents espaces : étudiant, admistrateur,éditeur */}
+      <Route path="/student-space" element={<StudentSpace />} />
+      <Route path="/admin-space" element={<AdminSpace />}/>
+      <Route path='editor-space' element={<EditorSpace />}/>
+      {/* Différents services */}
       <Route path="/" element={<Events />} />
       <Route path="/event/:id" element={<EventDetails />} />
       <Route path="/" element={<News />}/>
       <Route path='/new/:id' element={<NewsDetails />}/>
+      <Route path='/stage-service' element={<Stage />}/>
+      <Route path='/sport-service' element={<Sport />}/>
+      <Route path="/contacts" element={<Contacts />}/>
+      {/* Fonctionnalités de l'espace éditeur */}
+      <Route path="/contacts-for-editor" element={<ContactsForEditor />}/>
+      <Route path='add-contact' element={<AddContact />}/>
+      <Route path='/addData' element={<AddData />}/>
+      <Route path='posts-for-editor' element={<PostsForEditor />}/>
+      
       </Routes>
       </BrowserRouter>
   );

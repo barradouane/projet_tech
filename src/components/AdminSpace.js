@@ -22,54 +22,8 @@ export default function AdminDashboard() {
       
 
       
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:w-[90%] w-[85%] sm:mt-48 mt-36">
+      <div className="grid grid-cols-1 sm:grid-cols-1 gap-8 sm:w-[55%] w-[85%] sm:mt-48 mt-52">
         
-        <div className="bg-gradient-to-bl from-primary to-secondary border-secondary border-[1px] p-8 rounded-2xl shadow-xl space-y-6">
-          <h3 className="text-2xl font-semibold text-white text-left">
-            Gestion des posts
-          </h3>
-          <hr />
-          <motion.div
-            className="bg-gray-50 hover:bg-light p-4 text-center text-secondary sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/posts_for_admin")}
-          >
-            Consulter la liste des posts
-          </motion.div>
-          
-          <motion.div
-            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/addData")}
-          >
-            Créer un post
-          </motion.div>
-          
-        </div>
-
-        <div className="bg-gradient-to-bl from-primary to-secondary border-secondary border-[1px] p-8 rounded-2xl shadow-xl space-y-6">
-          <h3 className="text-2xl font-semibold text-white text-left">
-            Gestion des contacts
-          </h3>
-          <hr />
-          <motion.div
-            className="bg-gray-50 hover:bg-light p-4 text-center text-secondary sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/contacts_for_admin")}
-          >
-            Consulter la liste des contacts
-          </motion.div>
-          
-          <motion.div
-            className="bg-gray-50 hover:bg-light text-secondary p-4 text-center sm:text-[20px] text-[18px] font-medium rounded-lg shadow-md cursor-pointer "
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/addData")}
-          >
-            Créer un contact
-          </motion.div>
-          
-        </div>
-
         
         <div className="bg-gradient-to-bl from-primary to-secondary sm:mb-0 mb-16 sm:text-[20px] text-[18px] border-secondary border-[1px]  p-8 rounded-2xl shadow-xl space-y-6">
           <h3 className="text-2xl font-semibold text-white text-left">
