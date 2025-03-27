@@ -24,7 +24,7 @@ export default function PostsForEditor() {
   // Pour faire l'affichage 
   const fetchPosts = async () => {
     try {
-      const response = await fetch("http://localhost:8000/get_data.php");
+      const response = await fetch("http://localhost/projet_tech/src/backend/get_data");
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des données.");
       }

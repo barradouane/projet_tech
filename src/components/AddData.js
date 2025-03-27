@@ -12,30 +12,41 @@ export default function AddData() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!titre || !description || !type || !image || (type === 'evenement' && !date) || !plus_de_details) {
+  
+    // Vérification que tous les champs obligatoires sont remplis
+    if (!titre || !description || !type || !image || !plus_de_details) {
       alert('Tous les champs obligatoires doivent être remplis.');
       return;
     }
-
+  
     try {
       const formData = new FormData();
       formData.append('type', type);
       formData.append('titre', titre);
       formData.append('description', description);
-      if (type === 'evenement') formData.append('date', date);
-      formData.append('image', image);
       formData.append('plus_de_details', plus_de_details);
-
-      const response = await fetch('http://localhost:8000/add_data.php', {
+  
+      // Ajouter la date seulement si le type est 'evenement' et si la date est renseignée
+      if (type === 'evenement') {
+        if (date) {
+          formData.append('date', date); // Si la date est renseignée
+        } else {
+          formData.append('date', null); // Si la date n'est pas renseignée, envoie null
+        }
+      }
+  
+      formData.append('image', image);
+  
+      const response = await fetch('http://localhost/projet_tech/src/backend/add_data.php', {
         method: 'POST',
         body: formData,
       });
-
+  
       const result = await response.json();
-
+  
       if (response.ok && result.success) {
         alert(result.message);
+        // Réinitialiser les champs
         setTitre('');
         setDescription('');
         setDate('');
@@ -49,6 +60,7 @@ export default function AddData() {
       alert('Une erreur est survenue : ' + error.message);
     }
   };
+  
 
   return (
     <div className="h-screen flex items-center justify-center bg-white">

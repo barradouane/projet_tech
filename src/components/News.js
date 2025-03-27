@@ -10,7 +10,7 @@ export default function News() {
   // Récupérer les actualités
   const fetchNews = async () => {
     try {
-      const response = await fetch("http://localhost:8000/get_data.php");
+      const response = await fetch("http://localhost/projet_tech/src/backend/get_data.php");
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des données");
       }
@@ -53,7 +53,7 @@ export default function News() {
             key={index}
             image={
               news.image
-                ? `http://localhost:8000/uploads/${news.image}`
+                ? `http://localhost/projet_tech/src/backend/uploads/${news.image}`
                 : "https://via.placeholder.com/300"
             }
             heading={news.titre}

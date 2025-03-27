@@ -10,7 +10,7 @@ export default function Events() {
   const fetchEvents = async () => {
     // Récupération des données depuis get_data
     try {
-      const response = await fetch("http://localhost:8000/get_data.php");
+      const response = await fetch("http://localhost/projet_tech/src/backend/get_data.php");
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des événements");
       }
@@ -52,7 +52,7 @@ export default function Events() {
       key={index}
       image={
         event.image
-          ? `http://localhost:8000/uploads/${event.image}`
+          ? `http://localhost/projet_tech/src/backend/uploads/${event.image}`
           : "https://via.placeholder.com/300"
       }
       heading={event.titre}
