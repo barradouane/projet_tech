@@ -146,13 +146,13 @@ export default function ContactsForEditor() {
                 <td className="border border-secondary p-2">{contact.telephone}</td>
                 <td className="border border-secondary p-2">
                   <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="sm:w-[50%] hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]"
                     onClick={() => handleEditing(contact)}
                   >
                     Modifier
                   </button>
                   <button
-                    className="bg-red-500 text-white px-4 py-2 rounded ml-2"
+                    className="sm:w-[50%] hover:cursor-pointer bg-secondary border-[0.6px] p-2 text-light border-e-gray-100 rounded-[16px] hover:bg-light hover:text-secondary hover:border-secondary hover:border-[0.6px]"
                     onClick={() => supprimerContact(contact.id)}
                   >
                     Supprimer
