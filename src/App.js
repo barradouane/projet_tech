@@ -17,6 +17,8 @@ import Stage from './components/Stage';
 import Sport from './components/Sport';
 import AddContact from './components/addContact';
 import ContactsForEditor from './components/ContactsForEditor';
+import Restauration from './components/Restauration';
+import Sante from './components/Sante';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
       <Route path='/stage-service' element={<Stage />}/>
       <Route path='/sport-service' element={<Sport />}/>
       <Route path="/contacts" element={<Contacts />}/>
+      <Route path="/food-service" element={<Restauration />}/>
+      <Route path='sante-service' element={<Sante />}/>
       {/* Fonctionnalités de l'espace éditeur */}
       <Route path="/contacts-for-editor" element={<ContactsForEditor />}/>
       <Route path='add-contact' element={<AddContact />}/>

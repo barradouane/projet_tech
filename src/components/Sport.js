@@ -6,7 +6,7 @@ export default function Sport(){
         <div className="flex flex-col items-center pt-36 min-h-screen pb-20">
             <Navbar />
             
-            <h1 className="sm:text-4xl text-3xl font-semibold text-secondary sm:mb-2 mb-0 sm:mt-14 mt-0">
+            <h1 className="sm:text-4xl text-3xl font-semibold text-secondary sm:mb-2 mb-0 sm:mt-3 mt-0">
                 Vie sportive à l'EILCO
             </h1>
 
