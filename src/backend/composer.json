@@ -1,0 +1,17 @@
+{
+    "name": "amine/backend",
+    "autoload": {
+        "psr-4": {
+            "Amine\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "barradouane",
+            "email": "amine.barradouane@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
