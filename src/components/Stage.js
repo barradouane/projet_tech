@@ -28,9 +28,7 @@ export default function Stage() {
                             <li>Récupérez la convention signée et envoyez-la immédiatement au secrétariat administratif du service ARE.</li>
                             <li>Attendez la validation administrative par l’école. Vous recevrez ensuite la convention validée par mail.</li>
                         </ol>
-                        <button className="my-4 px-4 py-2 bg-primary text-white rounded-lg">
-                            Télécharger le guide complet 2024-2025
-                        </button>
+                        
                     </div>
                 </div>
                 
@@ -59,7 +57,7 @@ export default function Stage() {
                     
                     <Application 
                         titre="PSTAGE"
-                        lien=""
+                        lien="https://stages.univ-littoral.fr/"
                         description="PSTAGE est l’outil de gestion de conventions de stages pour les étudiants de l’ULCO. Elle est utilisée par les étudiants et les enseignants référents."
                     />
                     

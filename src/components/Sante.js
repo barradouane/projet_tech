@@ -13,7 +13,7 @@ export default function Sante(){
                 <h2 className="font-bold text-2xl text-light my-2 text-center">Soutien Psychologique et Médical - SUMPPS</h2>
                 <hr className="mb-4"/>
                 <li className="text-justify">
-  Le <a href="https://www.univ-littoral.fr/campus/campus-pour-tous-egalite-sante/sante/" className="text-red-400 font-bold underline" target="_blank">SUMPPS</a> de l'Université est là pour te soutenir face aux défis émotionnels et médicaux. Si tu te sens seul(e), stressé(e) ou si tu as besoin d'une consultation médicale, tu peux compter sur leur écoute et leur aide.
+  Le <a href="https://www.univ-littoral.fr/campus/campus-pour-tous-egalite-sante/sante/" className="text-red-400 font-bold underline">SUMPPS</a> de l'Université est là pour te soutenir face aux défis émotionnels et médicaux. Si tu te sens seul(e), stressé(e) ou si tu as besoin d'une consultation médicale, tu peux compter sur leur écoute et leur aide.
 </li>
 
                 <li className="list-disc ml-2"><strong>Services</strong> : Consultations médicales, psychologie, et bien plus.</li>

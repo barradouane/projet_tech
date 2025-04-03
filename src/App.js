@@ -27,6 +27,7 @@ import RestaurationBoulogne from "./components/RestaurationBoulogne"
 import RestaurationSaintOmer from "./components/RestaurationSaintOmer"
 import RestaurationDunkerque from "./components/RestaurationDunkerque"
 import VieEtudiante from "./components/VieEtudiante"
+import FinancerSesEtudes from "./components/FinancerSesEtudes"
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/food-service-saintomer" element={<RestaurationSaintOmer />} />
           <Route path="/food-service-dunkerque" element={<RestaurationDunkerque />} />
           <Route path="/sante-service" element={<Sante />} />
+          <Route path="/financement-service" element={<FinancerSesEtudes/>}/>
 
           {/* Fonctionnalités de l'espace éditeur */}
           <Route path="/contacts-for-editor" element={<ContactsForEditor />} />

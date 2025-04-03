@@ -98,9 +98,9 @@ export default function Navbar({ city }) {
       <ServiceMenuItem href="/sante-service" isLink={true}>
         Santé et social
       </ServiceMenuItem>
-      {/* <ServiceMenuItem href="/financement-service" isLink={true}>
+      <ServiceMenuItem href="/financement-service" isLink={true}>
         Financement des études
-      </ServiceMenuItem> */}
+      </ServiceMenuItem>
     </ul>
   )
 
