@@ -1,15 +1,54 @@
-import { FaInstagram, FaYoutube, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { useState, useEffect } from 'react';
+import { FaInstagram, FaYoutube, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
+// Map of location addresses
 const locationMap = {
-  Calais: "50 Rue Ferdinand Buisson, Calais, France",
-  Dunkerque: "Dunkerque, France",
-  Boulogne: "Boulogne-sur-Mer, France",
-  "Saint-Omer": "Saint-Omer, France",
+  Calais: "50 Rue Ferdinand Buisson",
+  Dunkerque: "220 Av. de l'Université",
+  Boulogne: "21 Rue Saint-Louis",
+  SaintOmer: "La Malassise, 11 Chem. de la Malassise"
 };
 
 export default function Footer({ site = "Calais" }) {
-  const location = locationMap[site] || locationMap["Calais"];
-  const mapSrc = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${encodeURIComponent(location)}`;
+  const [coordinates, setCoordinates] = useState(null);
+
+  // Fetch geocode data when component mounts or the 'site' prop changes
+  useEffect(() => {
+    const geocodeLocation = async (location) => {
+      try {
+        const response = await fetch('https://neutrinoapi.net/geocode-address', {
+          method: 'POST',
+          headers: {
+            'User-ID': 'NawalMlk',
+            'API-Key': 'QT2BOjy6JXIhtENBCExBz1gSLPO2f6NXe6ixU4Me0vmeOWbU',
+          },
+          body: new URLSearchParams({
+            address: locationMap[location],
+            'language-code': 'en',
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+
+        const data = await response.json();
+        console.log('Geocode data:', data); // Debugger pour vérifier les données
+        if (data.found > 0) {
+          setCoordinates({
+            lat: data.locations[0].latitude,
+            lng: data.locations[0].longitude,
+          });
+        } else {
+          console.log('No locations found');
+        }
+      } catch (error) {
+        console.error('Error during geocoding:', error);
+      }
+    };
+
+    geocodeLocation(site);
+  }, [site]);
 
   return (
     <div className="sm:p-12 p-8 mt-6 bg-secondary text-white">
@@ -20,17 +59,19 @@ export default function Footer({ site = "Calais" }) {
         <p>CS 30613- 62228 CALAIS CEDEX</p>
         <p>Direction générale : Tél .: 03 21 17 10 05</p>
 
-        {/* Embedded Google Map */}
-        <div className="mt-6 w-full max-w-md h-64">
-          <iframe
-            src={mapSrc}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
+        {/* OpenStreetMap embedded via iframe with dynamic location */}
+        {coordinates && (
+          <div className="mt-6 w-full max-w-md h-64">
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${coordinates.lng - 0.01}%2C${coordinates.lat - 0.01}%2C${coordinates.lng + 0.01}%2C${coordinates.lat + 0.01}&layer=mapnik`}
+              title="Map"
+            ></iframe>
+          </div>
+        )}
 
         {/* Social Media Icons */}
         <div className="flex space-x-6 mt-6">

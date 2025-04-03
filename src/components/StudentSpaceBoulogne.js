@@ -20,7 +20,7 @@ function StudentSpaceBoulogne(){
         
         <News site={site} />
        <Events site={site} />
-        <Footer />
+        <Footer site={site}/>
         </>
     ); 
 }
