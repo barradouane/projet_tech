@@ -38,6 +38,19 @@ try {
     )";
     $pdo->exec($sql);
 
+     // Création de la table des contacts (ajout du champ site)
+     $sql = "CREATE TABLE IF NOT EXISTS contacts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        site ENUM('Calais', 'Boulogne', 'Dunkerque', 'Saint-Omer') NOT NULL,
+        nom VARCHAR(50) NOT NULL,
+        prenom VARCHAR(50) NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL,
+        telephone VARCHAR(20) NOT NULL,
+        service VARCHAR(100) NOT NULL,
+        niveau_de_formation VARCHAR(20) DEFAULT NULL
+    );";
+    $pdo->exec($sql);
+
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }

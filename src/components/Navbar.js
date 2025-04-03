@@ -88,8 +88,8 @@ export default function Navbar({ city }) {
         Stages et alternances
       </ServiceMenuItem>
       <ServiceMenuItem href="https://www.bulco.univ-littoral.fr/">Bibliothèque de l'ULCO</ServiceMenuItem>
-      <ServiceMenuItem href="/sport-service" isLink={true}>
-        Vie sportive
+      <ServiceMenuItem href="/vie-etudiante-service" isLink={true}>
+        Vie étudiante
       </ServiceMenuItem>
       {/* Changer le lien en fonction de la ville */}
       <ServiceMenuItem href={getFoodServiceLink()} isLink={true}>

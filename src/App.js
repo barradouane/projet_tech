@@ -11,7 +11,6 @@ import EventDetails from "./components/EventDetails"
 import NewsDetails from "./components/NewsDetails"
 import EditorSpace from "./components/EditorSpace"
 import Stage from "./components/Stage"
-import Sport from "./components/Sport"
 import AddContact from "./components/addContact"
 import ContactsForEditor from "./components/ContactsForEditor"
 import Restauration from "./components/RestaurationCalais"
@@ -27,6 +26,7 @@ import RestaurationCalais from "./components/RestaurationCalais"
 import RestaurationBoulogne from "./components/RestaurationBoulogne"
 import RestaurationSaintOmer from "./components/RestaurationSaintOmer"
 import RestaurationDunkerque from "./components/RestaurationDunkerque"
+import VieEtudiante from "./components/VieEtudiante"
 
 function App() {
   return (
@@ -55,7 +55,7 @@ function App() {
           <Route path="/event/:id" element={<EventDetails />} />
           <Route path="/news/:id" element={<NewsDetails />} />
           <Route path="/stage-service" element={<Stage />} />
-          <Route path="/sport-service" element={<Sport />} />
+          <Route path="/vie-etudiante-service" element={<VieEtudiante />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/food-service-calais" element={<RestaurationCalais />} />
           <Route path="/food-service-boulogne" element={<RestaurationBoulogne />} />

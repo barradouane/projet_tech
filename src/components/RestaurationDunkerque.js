@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import foodImage from "../assets/images/foodService.jpeg";
 export default function RestaurationDunkerque(){
     return(
         <div className="flex flex-col items-center pt-36 min-h-screen pb-20">
@@ -13,11 +14,19 @@ Si tu préfères profiter de ton propre repas maison, rendez-vous à la Maison d
 
 Tu trouveras ci-dessous les adresses et horaires des Restaurants Universitaires ainsi que des MDE.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:w-[90%] w-[85%] mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:w-[80%] w-[90%] mt-6">
+        
+        <div className="relative">
+          <img
+            alt="Repas à l'EILCO"
+            src={foodImage}
+            className="w-full h-56 object-cover rounded-[12px] shadow-md transition-all duration-300 hover:scale-105"
+          />
+        </div>
             
            
            
-            <div className="bg-light border-[0.6px] border-light p-8 rounded-[16px] shadow-[0_5px_15px_rgba(0,0,0,0.25)]">
+            <div className="h-56 bg-light text-secondary border-[0.6px] border-light py-2 px-8 rounded-[16px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl]">
                 <ul className="text-[18px]">    
                     <li className="font-bold text-2xl text-secondary my-2 text-center">RU DUNKERQUE</li>
                     <li>1, place des Nations</li>

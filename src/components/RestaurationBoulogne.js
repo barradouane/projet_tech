@@ -13,20 +13,20 @@ export default function RestaurationBoulogne() {
         Si tu préfères profiter de ton propre repas maison, rendez-vous à la Maison des Étudiants (MDE) de ton campus, où des micro-ondes sont disponibles pour réchauffer ton déjeuner.
         Tu trouveras ci-dessous les adresses et horaires des Restaurants Universitaires ainsi que des MDE.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:w-[90%] w-[85%] mt-8">
-        {/* Image with rounded corners and shadow */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:w-[80%] w-[90%] mt-6">
+        
         <div className="relative">
           <img
             alt="Repas à l'EILCO"
             src={foodImage}
-            className="w-full h-auto rounded-[12px] shadow-lg transition-all duration-300 hover:scale-105"
+            className="w-full h-48 object-cover rounded-[12px] shadow-md transition-all duration-300 hover:scale-105"
           />
         </div>
 
-        {/* Info Card */}
-        <div className="bg-primary text-light border-[0.6px] border-light p-8 rounded-[16px] shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-          <ul className="text-[18px]">
-            <li className="font-bold text-2xl text-light my-2 text-center">RU BOULOGNE</li>
+        
+        <div className="h-48 bg-primary text-light border-[0.6px] border-light py-2 px-8 rounded-[16px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <ul className="text-[16px]">
+            <li className="font-bold text-xl text-light my-2 text-center">RU BOULOGNE</li>
             <li>46, rue du Vivier</li>
             <li>03 21 33 65 70</li>
             <li>Ouvert de 11h20 à 13h40</li>
@@ -34,7 +34,8 @@ export default function RestaurationBoulogne() {
             <li>Salle micro-onde : MDE</li>
           </ul>
         </div>
-      </div>
+        </div>
+
     </div>
   );
 }
