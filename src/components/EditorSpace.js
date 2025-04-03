@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import logoImage from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export default function EditorSpace() {
   const navigate = useNavigate();
@@ -12,11 +14,23 @@ export default function EditorSpace() {
   return (
     <div className="h-screen flex flex-col items-center">
       
-      <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
-      {/* Logo */}
-      <img src={logoImage} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
-<h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace d'édition</h2>
-</nav>
+     {/* Navbar */}
+     <nav className="flex justify-between items-center px-8 py-0 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
+        {/* Logo */}
+        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+
+        {/* Titre */}
+        <h2 className="text-lg sm:text-xl font-medium">Espace d'éditionn</h2>
+
+        {/* Bouton Se Déconnecter */}
+        <Link
+          to="/"
+          className="flex items-center text-secondary text-lg font-medium px-4 py-2 hover:bg-secondary hover:text-white rounded-lg transition-all duration-300 ease-in-out"
+        >
+          <FaSignOutAlt className="mr-2" />
+          Se déconnecter
+        </Link>
+      </nav>
 
  
       
