@@ -1,79 +1,95 @@
-import React, { useState, useEffect } from "react";
-import EventsData from "./EventsData";
+"use client"
 
-export default function Events() {
-  const [eventItems, setEventItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showAll, setShowAll] = useState(false);  // Affichage complet ou non
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import EventsData from "./EventsData"
+
+export default function Events({ site }) {
+  const [eventItems, setEventItems] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const fetchEvents = async () => {
     // Récupération des données depuis get_data
     try {
-      const response = await fetch("http://localhost:8000/get_data.php");
-      if (!response.ok) {
-        throw new Error("Erreur lors de la récupération des événements");
+      // Construire l'URL avec le paramètre site si fourni
+      let url = "http://localhost:8000/get_data.php"
+      if (site) {
+        url += `?site=${encodeURIComponent(site)}`
       }
-      const data = await response.json();
-      setEventItems(data.evenements || []);
+
+      const response = await fetch(url)
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des événements")
+      }
+      const data = await response.json()
+      setEventItems(data.evenements || [])
     } catch (error) {
-      console.error("Erreur lors du chargement des événements :", error);
-      setError(`Une erreur s'est produite : ${error.message}`);
+      console.error("Erreur lors du chargement des événements :", error)
+      setError(`Une erreur s'est produite : ${error.message}`)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   useEffect(() => {
-    fetchEvents();
-  }, []);
+    fetchEvents()
+  }, [site])
 
   if (loading) {
-    return <p className="text-center font-medium my-5 text-secondary text-2xl">Chargement ...</p>;
+    return <p className="text-center font-medium my-5 text-secondary text-2xl">Chargement ...</p>
   }
 
   if (error) {
-    return <p className="text-center text-red-500 py-5 text-2xl">Erreur lors de la récupération des données</p>;
+    return <p className="text-center text-red-500 py-5 text-2xl">Erreur lors de la récupération des données</p>
   }
 
-  //Pour faire un bon affichage et pour que ça se soit pas cluttered
-  const displayedEvents = showAll ? eventItems : eventItems.slice(0, 3); // 3 premières ou toutes
+  // Toujours limiter à 3 événements sur la page principale
+  const displayedEvents = eventItems.slice(0, 3)
+
+  // Si aucun événement n'est trouvé pour ce site
+  if (eventItems.length === 0) {
+    return (
+      <div className="sm:m-[4rem_6rem] m-0 text-[#2a2a2a]">
+        <h2 className="mt-10 sm:mb-0 mb-8 mx-0 text-4xl text-center text-secondary font-medium">
+          Evénements à venir {site ? `à ${site}` : ""}
+        </h2>
+        <p className="text-center py-5">Aucun événement disponible {site ? `pour ${site}` : ""} pour le moment.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="sm:m-[4rem_6rem] m-0 text-[#2a2a2a]">
       <h2 className="mt-10 sm:mb-0 mb-8 mx-0 text-4xl text-center text-secondary font-medium">
-        Evénements à venir
+        Evénements à venir {site ? `à ${site}` : ""}
       </h2>
 
       <div className="grid sm:grid-cols-3 grid-cols-1 gap-6 mt-2">
-      {displayedEvents.map((event, index) => (
-    <EventsData
-    id={event.id}
-      key={index}
-      image={
-        event.image
-          ? `http://localhost:8000/uploads/${event.image}`
-          : "https://via.placeholder.com/300"
-      }
-      heading={event.titre}
-      text={event.description}
-      date={event.date}
-    />
-  ))}
- 
-</div>
- {/* Bouton "Voir plus"/"Voir moins" */}
- {eventItems.length > 3 && (
+        {displayedEvents.map((event, index) => (
+          <EventsData
+            id={event.id}
+            key={index}
+            image={event.image ? `http://localhost:8000/uploads/${event.image}` : "https://via.placeholder.com/300"}
+            heading={event.titre}
+            text={event.description}
+            date={event.date}
+          />
+        ))}
+      </div>
+
+      {/* Bouton "Voir plus" qui redirige vers la page de tous les événements avec le site en paramètre */}
+      {eventItems.length > 3 && (
         <div className="text-center mt-4">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 text-white bg-secondary rounded-2xl hover:bg-opacity-80 transition"
+          <Link
+            to={site ? `/all-events/${site}` : "/all-events"}
+            className="inline-block px-6 py-2 text-white bg-secondary rounded-2xl hover:bg-opacity-80 transition"
           >
-            {showAll ? "Voir moins" : "Voir plus"}
-          </button>
+            Voir plus
+          </Link>
         </div>
       )}
-
     </div>
-  );
+  )
 }
+

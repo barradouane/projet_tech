@@ -5,6 +5,7 @@ import logoImage from "../assets/images/logo.png"
 import { Link } from "react-router-dom"
 import { FaSignOutAlt, FaBars, FaTimes, FaHome, FaBriefcase, FaAddressBook } from "react-icons/fa"
 
+// Définir les éléments de menu
 const MenuItems = [
   {
     title: "Accueil",
@@ -47,7 +48,7 @@ const MenuItem = memo(({ item }) => (
   </li>
 ))
 
-export default function Navbar() {
+export default function Navbar({ city }) {
   const [clicked, setClicked] = useState(false)
   const [showServices, setShowServices] = useState(false)
 
@@ -58,6 +59,21 @@ export default function Navbar() {
   const toggleServices = useCallback(() => {
     setShowServices((prev) => !prev)
   }, [])
+
+  // Générer la route pour la restauration en fonction de la ville
+  const getFoodServiceLink = () => {
+    switch (city) {
+      case "Calais":
+        return "/food-service-calais"
+      case "Dunkerque":
+        return "/food-service-dunkerque"
+      case "Saint-Omer":
+        return "/food-service-saintomer"
+      case "Boulogne":
+        return "/food-service-boulogne"
+      
+    }
+  }
 
   const servicesMenu = showServices && (
     <ul className="rounded-[10px] absolute left-0 sm:left-auto sm:right-0 top-full bg-secondary text-light mt-0 w-full sm:w-[200px] sm:max-h-[450px] max-h-[300px] overflow-y-auto">
@@ -75,15 +91,16 @@ export default function Navbar() {
       <ServiceMenuItem href="/sport-service" isLink={true}>
         Vie sportive
       </ServiceMenuItem>
-      <ServiceMenuItem href="/food-service" isLink={true}>
+      {/* Changer le lien en fonction de la ville */}
+      <ServiceMenuItem href={getFoodServiceLink()} isLink={true}>
         Restauration
       </ServiceMenuItem>
       <ServiceMenuItem href="/sante-service" isLink={true}>
         Santé et social
       </ServiceMenuItem>
-      <ServiceMenuItem href="/financement-service" isLink={true}>
+      {/* <ServiceMenuItem href="/financement-service" isLink={true}>
         Financement des études
-      </ServiceMenuItem>
+      </ServiceMenuItem> */}
     </ul>
   )
 
@@ -138,4 +155,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

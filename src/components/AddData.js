@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import logoImage from '../assets/images/logo.png';
+"use client"
 
+import { useState } from "react"
+import logoImage from "../assets/images/logo.png"
 
 export default function AddData() {
   const [type, setType] = useState('');
@@ -9,14 +10,30 @@ export default function AddData() {
   const [date, setDate] = useState('');
   const [image, setImage] = useState(null);
   const [plus_de_details, setPlus_de_details] = useState('');
+  const [selectedSites, setSelectedSites] = useState([]); // Stocke les sites cochés
+  const [loading, setLoading] = useState(false); // Pour gérer l'état de chargement
+  const [error, setError] = useState(null); // Pour gérer les erreurs
+
+  const sitesList = ['Calais', 'Dunkerque', 'Boulogne', 'Saint-Omer']; // Liste des sites
+
+  // Fonction pour gérer la sélection des sites
+  const handleSiteChange = (site) => {
+    setSelectedSites((prev) =>
+      prev.includes(site) ? prev.filter((s) => s !== site) : [...prev, site]
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!titre || !description || !type || !image || (type === 'evenement' && !date) || !plus_de_details) {
-      alert('Tous les champs obligatoires doivent être remplis.');
+    // Validation des champs
+    if (!titre || !description || !type || !image || (type === 'evenement' && !date) || !plus_de_details || selectedSites.length === 0) {
+      setError('Tous les champs obligatoires doivent être remplis.');
       return;
     }
+
+    setLoading(true); // Activer l'état de chargement
+    setError(null); // Réinitialiser les erreurs
 
     try {
       const formData = new FormData();
@@ -26,38 +43,49 @@ export default function AddData() {
       if (type === 'evenement') formData.append('date', date);
       formData.append('image', image);
       formData.append('plus_de_details', plus_de_details);
+      
+      // Ajouter chaque site individuellement pour que PHP les reçoivent correctement
+      selectedSites.forEach(site => {
+        formData.append('sites[]', site);
+      });
 
       const response = await fetch('http://localhost:8000/add_data.php', {
         method: 'POST',
         body: formData,
       });
 
-      const result = await response.json();
+      const result = await response.json(); // Attendre la réponse et convertir en JSON
 
       if (response.ok && result.success) {
-        alert(result.message);
+        alert(result.message); // Afficher le message de succès
+        // Réinitialisation des champs
         setTitre('');
         setDescription('');
         setDate('');
         setImage(null);
         setType('');
         setPlus_de_details('');
+        setSelectedSites([]);
       } else {
-        alert(result.message || 'Erreur lors de l’ajout.');
+        // Afficher le message d'erreur si la réponse n'est pas OK
+        setError(result.message || 'Erreur lors de l\'ajout.');
       }
     } catch (error) {
-      alert('Une erreur est survenue : ' + error.message);
+      // Gérer les erreurs d'API ou de réseau
+      setError('Une erreur est survenue : ' + error.message);
+    } finally {
+      setLoading(false); // Désactiver l'état de chargement
     }
   };
 
   return (
     <div className="h-screen flex items-center justify-center bg-white">
-       <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
-      {/* Logo */}
-      <img src={logoImage} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
-<h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace administratif</h2>
-</nav>
-      <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-24 ">
+      <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
+        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
+        <h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace administratif</h2>
+      </nav>
+
+      <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[90%] p-6 bg-white shadow-lg rounded-[20px] mt-[350px] mb-[50px]">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <label className="flex flex-col">
             <span className="font-semibold my-3 text-[20px] text-secondary">Type de contenu :</span>
@@ -96,6 +124,23 @@ export default function AddData() {
             className="border p-2 rounded"
           />
 
+          {/* Sélection des sites */}
+          <div className="flex flex-col gap-2">
+            <span className="font-semibold my-3 text-[20px] text-secondary">Sélectionner les sites :</span>
+            {sitesList.map((site) => (
+              <label key={site} className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  value={site}
+                  checked={selectedSites.includes(site)}
+                  onChange={() => handleSiteChange(site)}
+                  className="h-5 w-5"
+                />
+                <span>{site}</span>
+              </label>
+            ))}
+          </div>
+
           {/* Affichage conditionnel du champ date */}
           {type === 'evenement' && (
             <input
@@ -114,11 +159,17 @@ export default function AddData() {
             required
             className="border p-2 rounded"
           />
+
+          {/* Affichage du message d'erreur */}
+          {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+
+          {/* Bouton d'envoi */}
           <button
             type="submit"
-            className='w-full h-[45px] bg-secondary border-none outline-none rounded-[10px] shadow-[0_0_10px_rgba(0,0,0,0.1)] cursor-pointer text-[16px] text-light font-bold '
+            disabled={loading}
+            className={`w-full h-[45px] ${loading ? 'bg-gray-400' : 'bg-secondary'} border-none outline-none rounded-[10px] shadow-[0_0_10px_rgba(0,0,0,0.1)] cursor-pointer text-[16px] text-light font-bold`}
           >
-            Ajouter
+            {loading ? 'Chargement...' : 'Ajouter'}
           </button>
         </form>
       </div>
