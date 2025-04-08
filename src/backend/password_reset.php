@@ -97,8 +97,86 @@ if (isset($data['email'])) {
                 $mail->addAddress($data['email']);
                 $mail->Subject = 'Réinitialisation mot de passe';
                 $mail->isHTML(true);
-                $mail->Body    = "Clique ici pour réinitialiser votre mot de passe : <a href='$link'>$link</a>";
+                $mail->CharSet = 'UTF-8'; 
+                $mail->Body    = $mail->Body = "
+                <html>
+                <head>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            color: #333333;
+                        }
+                        .email-container {
+                            max-width: 600px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            border: 1px solid #e4e4e4;
+                            border-radius: 5px;
+                            background-color: #f9f9f9;
+                        }
+                        .header {
+                            text-align: center;
+                            padding: 20px 0;
+                            border-bottom: 2px solid #eaeaea;
+                        }
+                        .content {
+                            padding: 20px;
+                            background-color: #ffffff;
+                            border-radius: 4px;
+                        }
+                        .button {
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background-color: #4a86e8;
+                            color: #ffffff !important;
+                            text-decoration: none;
+                            border-radius: 4px;
+                            font-weight: bold;
+                            margin: 20px 0;
+                        }
+                        .footer {
+                            margin-top: 20px;
+                            text-align: center;
+                            font-size: 12px;
+                            color: #888888;
+                        }
+                        .warning {
+                            font-size: 12px;
+                            color: #777;
+                            margin-top: 15px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class='email-container'>
+                        <div class='header'>
+                            <h2>Réinitialisation de votre mot de passe</h2>
+                        </div>
+                        <div class='content'>
+                            <p>Bonjour,</p>
+                            <p>Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.</p>
+                            <p>Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :</p>
+                            
+                            <div style='text-align: center;'>
+                                <a href='$link' class='button'>Réinitialiser mon mot de passe</a>
+                            </div>
+                            
+                            <p>Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.</p>
+                            
+                            <p class='warning'>Ce lien de réinitialisation expirera dans 1 heure pour des raisons de sécurité.</p>
+                        </div>
+                        <div class='footer'>
+                            <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre.</p>
+                            <p>&copy; " . date('Y') . " Portail Étudiant - Tous droits réservés</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                ";
                 
+                // Also set the plain text version for email clients that don't support HTML
+                $mail->AltBody = "Bonjour,\n\nNous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.\n\nPour réinitialiser votre mot de passe, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :\n\n$link\n\nSi vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.\n\nCe lien expirera dans 1 heure pour des raisons de sécurité.\n\nPortail Étudiant";
                 $mail->send();
                 
                 // Récupérer et enregistrer la sortie de débogage

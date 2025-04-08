@@ -94,20 +94,87 @@ if ($stmt->execute([$nom, $prenom, $email, $hashedPassword, $site, $verification
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = "Vérification de votre compte";
-        $mail->Body    = "
-        <html>
-        <head>
-            <title>Vérification de votre compte</title>
-        </head>
-        <body>
-            <h2>Bonjour $prenom $nom,</h2>
-            <p>Merci de vous être inscrit. Veuillez cliquer sur le lien ci-dessous pour vérifier votre adresse email :</p>
-            <p><a href='$verificationLink'>Vérifier mon email</a></p>
-            <p>Si vous n'avez pas créé de compte, veuillez ignorer cet email.</p>
-        </body>
-        </html>
-        ";
-        $mail->AltBody = "Bonjour $prenom $nom, merci de vous être inscrit. Veuillez cliquer sur ce lien pour vérifier votre adresse email : $verificationLink";
+        $mail->Body = "
+    <html>
+    <head>
+        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333333;
+            }
+            .email-container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #e4e4e4;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+            }
+            .header {
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 2px solid #eaeaea;
+            }
+            .content {
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 4px;
+            }
+            .button {
+                display: inline-block;
+                padding: 12px 24px;
+                background-color: #4a86e8;
+                color: #ffffff !important;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+                margin: 20px 0;
+            }
+            .footer {
+                margin-top: 20px;
+                text-align: center;
+                font-size: 12px;
+                color: #888888;
+            }
+            .warning {
+                font-size: 12px;
+                color: #777;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='email-container'>
+            <div class='header'>
+                <h2>Vérification de votre compte</h2>
+            </div>
+            <div class='content'>
+                <p>Bonjour $prenom $nom,</p>
+                <p>Merci pour votre inscription, nous sommes ravis de vous accueillir sur le Portail Étudiant. Pour activer votre compte et accéder à toutes les fonctionnalités, veuillez vérifier votre adresse email.</p>
+                <p>Cliquez sur le bouton ci-dessous pour confirmer votre adresse email :</p>
+                
+                <div style='text-align: center;'>
+                    <a href='$verificationLink' class='button'>Vérifier mon adresse email</a>
+                </div>
+                
+                <p>Si vous n'avez pas créé de compte sur notre plateforme, vous pouvez ignorer cet email.</p>
+                
+                <p class='warning'>Ce lien de vérification est valable pendant 24 heures pour des raisons de sécurité.</p>
+            </div>
+            <div class='footer'>
+                <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre.</p>
+                <p>&copy; " . date('Y') . " Portail Étudiant - Tous droits réservés</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+    
+    $mail->AltBody = "Bonjour $prenom $nom,\n\nMerci pour votre inscription, nous sommes ravis de vous accueillir sur le Portail Étudiant. Pour activer votre compte et accéder à toutes les fonctionnalités, veuillez vérifier votre adresse email.\n\nPour confirmer votre adresse email, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :\n\n$verificationLink\n\nSi vous n'avez pas créé de compte sur notre plateforme, vous pouvez ignorer cet email.\n\nCe lien de vérification est valable pendant 24 heures pour des raisons de sécurité.\n\nPortail Étudiant";
+    
+        $mail->AltBody = "Bonjour $prenom $nom,Merci pour votre inscription, nous sommes ravis de vous accueillir sur le Portail Étudiant. Veuillez cliquer sur ce lien pour vérifier votre adresse email : $verificationLink";
         
         $mail->send();
         $emailSent = true;
