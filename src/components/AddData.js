@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import logoImage from "../assets/images/logo.png"
+import { FaSignOutAlt } from "react-icons/fa";
 
 export default function AddData() {
   const [type, setType] = useState('');
@@ -78,14 +79,53 @@ export default function AddData() {
     }
   };
 
+  // Gestion de la déconnexion
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/logout.php", {
+        method: "POST",
+        credentials: "include", // Important si les sessions sont gérées avec des cookies
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.success); // Afficher le message de succès
+        window.location.href = "/"; // Redirection après déconnexion
+      } else {
+        console.error("Erreur HTTP:", response.status);
+        alert("Erreur lors de la déconnexion.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Impossible de se déconnecter.");
+    }
+  };
+
   return (
-    <div className="h-screen flex items-center justify-center bg-white">
-      <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
-        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
-        <h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace administratif</h2>
+    <div className="h-auto flex items-center justify-center bg-white">
+       {/* Navbar */}
+       <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
+        {/* Logo */}
+        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+
+        {/* Titre */}
+        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+
+        {/* Bouton Se Déconnecter */}
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleLogout}
+        >
+          <FaSignOutAlt className="text-xl" />
+          <span>Se déconnecter</span>
+        </div>
       </nav>
 
-      <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[90%] p-6 bg-white shadow-lg rounded-[20px] mt-[350px] mb-[50px]">
+      <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[90%] p-6 bg-white shadow-lg rounded-[20px] mt-[120px] mb-[50px]">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <label className="flex flex-col">
             <span className="font-semibold my-3 text-[20px] text-secondary">Type de contenu :</span>

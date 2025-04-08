@@ -7,6 +7,32 @@ import { FaSignOutAlt } from "react-icons/fa";
 export default function EditorSpace() {
   const navigate = useNavigate();
 
+  // Gestion de la déconnexion
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/logout.php", {
+        method: "POST",
+        credentials: "include", // Important si les sessions sont gérées avec des cookies
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.success); // Afficher le message de succès
+        window.location.href = "/"; // Redirection après déconnexion
+      } else {
+        console.error("Erreur HTTP:", response.status);
+        alert("Erreur lors de la déconnexion.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Impossible de se déconnecter.");
+    }
+  };
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -15,21 +41,22 @@ export default function EditorSpace() {
     <div className="h-screen flex flex-col items-center">
       
      {/* Navbar */}
-     <nav className="flex justify-between items-center px-8 py-0 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
         <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
 
         {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace d'éditionn</h2>
+        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
 
         {/* Bouton Se Déconnecter */}
-        <Link
-          to="/"
-          className="flex items-center text-secondary text-lg font-medium px-4 py-2 hover:bg-secondary hover:text-white rounded-lg transition-all duration-300 ease-in-out"
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleLogout}
         >
-          <FaSignOutAlt className="mr-2" />
-          Se déconnecter
-        </Link>
+          <FaSignOutAlt className="text-xl" />
+          <span>Se déconnecter</span>
+        </div>
       </nav>
 
  

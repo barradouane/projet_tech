@@ -5,6 +5,7 @@ import SignUpPage from "./components/SignUpPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Contacts from "./components/Contacts"
 import AddData from "./components/AddData"
+import AddStudent from "./components/addStudent"
 import AdminSpace from "./components/AdminSpace.js"
 import PostsForEditor from "./components/PostsForEditor"
 import EventDetails from "./components/EventDetails"
@@ -28,6 +29,10 @@ import RestaurationSaintOmer from "./components/RestaurationSaintOmer"
 import RestaurationDunkerque from "./components/RestaurationDunkerque"
 import VieEtudiante from "./components/VieEtudiante"
 import FinancerSesEtudes from "./components/FinancerSesEtudes"
+import StudentsForAdmin from "./components/StudentsForAdmin"
+import ModifierPost from "./components/ModifierPost"
+import ForgotPassword from "./components/ForgotPassword"
+import ResetPassword from "./components/ResetPassword"
 
 function App() {
   return (
@@ -39,6 +44,8 @@ function App() {
           {/* Pages d'authentification */}
           <Route path="/" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
 
           {/* Espaces étudiants */}
           <Route path="/student-space-calais" element={<StudentSpaceCalais />} />
@@ -70,6 +77,11 @@ function App() {
           <Route path="/add-contact" element={<AddContact />} />
           <Route path="/addData" element={<AddData />} />
           <Route path="/posts-for-editor" element={<PostsForEditor />} />
+
+          {/* Fonctionnalités de l'espace admin */}
+          <Route path="/students-for-admin" element={<StudentsForAdmin />}/>
+          <Route path="/modifier_post/:id" element={<ModifierPost />} />
+          <Route path="/add-student" element={<AddStudent />}/>
         </Routes>
       </BrowserRouter>
     </UserProvider>

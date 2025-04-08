@@ -1,15 +1,65 @@
 "use client"
 
-import { useState, useCallback, memo } from "react"
+import { useState, useCallback, memo, useEffect } from "react"
 import logoImage from "../assets/images/logo.png"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { FaSignOutAlt, FaBars, FaTimes, FaHome, FaBriefcase, FaAddressBook } from "react-icons/fa"
 
-// Définir les éléments de menu
-const MenuItems = [
+// Fonction pour formater le nom du site pour l'URL
+const formatSiteForUrl = (site) => {
+  if (!site) return "";
+  // Convertir en minuscules et supprimer les tirets
+  return site.toLowerCase().replace(/-/g, "");
+};
+
+// Fonction pour extraire le site de l'URL actuelle
+const extractSiteFromUrl = (pathname) => {
+  // Vérifie si l'URL contient "student-space-"
+  if (pathname.includes("student-space-")) {
+    const sitePart = pathname.split("student-space-")[1];
+    
+    // Mapping des noms de sites dans l'URL vers les noms de props
+    if (sitePart === "calais") return "Calais";
+    if (sitePart === "dunkerque") return "Dunkerque";
+    if (sitePart === "saintomer") return "Saint-Omer";
+    if (sitePart === "boulogne") return "Boulogne";
+  }
+  
+  return null;
+};
+
+
+//Gestion de la déconnexion
+const handleLogout = async () => {
+  try {
+    const response = await fetch("http://localhost:8000/logout.php", {
+      method: "POST",
+      credentials: "include", // Important si les sessions sont gérées avec des cookies
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      alert(result.success); // Afficher le message de succès
+      window.location.href = "/"; // Redirection après déconnexion
+    } else {
+      console.error("Erreur HTTP:", response.status);
+      alert("Erreur lors de la déconnexion.");
+    }
+  } catch (error) {
+    console.error("Erreur:", error);
+    alert("Impossible de se déconnecter.");
+  }
+};
+
+// MenuItems est maintenant une fonction qui prend le site en paramètre
+const getMenuItems = (site) => [
   {
     title: "Accueil",
-    url: "/",
+    url: `/student-space-${formatSiteForUrl(site)}`,
     cName: "nav-links",
     icon: <FaHome />,
   },
@@ -19,7 +69,7 @@ const MenuItems = [
     cName: "nav-links",
     icon: <FaAddressBook />,
   },
-]
+];
 
 const ServiceMenuItem = memo(({ href, children, isLink = false }) => {
   if (isLink) {
@@ -51,6 +101,40 @@ const MenuItem = memo(({ item }) => (
 export default function Navbar({ city }) {
   const [clicked, setClicked] = useState(false)
   const [showServices, setShowServices] = useState(false)
+  const [currentSite, setCurrentSite] = useState("")
+  const location = useLocation()
+  
+  // Effet pour gérer le site actuel
+  useEffect(() => {
+    // 1. Essayer d'utiliser le props city s'il existe
+    if (city) {
+      // Sauvegarder dans localStorage pour les futures navigations
+      localStorage.setItem("lastVisitedSite", city);
+      setCurrentSite(city);
+      return;
+    }
+    
+    // 2. Essayer d'extraire le site de l'URL actuelle
+    const siteFromUrl = extractSiteFromUrl(location.pathname);
+    if (siteFromUrl) {
+      localStorage.setItem("lastVisitedSite", siteFromUrl);
+      setCurrentSite(siteFromUrl);
+      return;
+    }
+    
+    // 3. Utiliser le dernier site visité depuis localStorage
+    const lastSite = localStorage.getItem("lastVisitedSite");
+    if (lastSite) {
+      setCurrentSite(lastSite);
+      return;
+    }
+    
+    // 4. Fallback sur un site par défaut si rien d'autre n'est disponible
+    setCurrentSite("Calais"); // Site par défaut
+  }, [city, location.pathname]);
+  
+  // Générer les items de menu avec le site actuel
+  const menuItems = getMenuItems(currentSite);
 
   const handleClick = useCallback(() => {
     setClicked((prev) => !prev)
@@ -62,7 +146,7 @@ export default function Navbar({ city }) {
 
   // Générer la route pour la restauration en fonction de la ville
   const getFoodServiceLink = () => {
-    switch (city) {
+    switch (currentSite) {
       case "Calais":
         return "/food-service-calais"
       case "Dunkerque":
@@ -71,7 +155,8 @@ export default function Navbar({ city }) {
         return "/food-service-saintomer"
       case "Boulogne":
         return "/food-service-boulogne"
-      
+      default:
+        return "/food-service"
     }
   }
 
@@ -124,7 +209,7 @@ export default function Navbar({ city }) {
         className={`sm:mt-0 mt-2 sm:flex sm:items-center sm:static sm:w-auto sm:opacity-100 sm:flex-row 
         ${clicked ? "flex flex-col bg-light items-center flex-start-0 absolute top-[80px] left-0 w-full opacity-100 rounded-[13px] sm:shadow-none shadow-[0_5px_15px_rgba(0,0,0,0.25)] z-[9999]" : "hidden"}`}
       >
-        {MenuItems.map((item, index) => (
+        {menuItems.map((item, index) => (
           <MenuItem key={index} item={item} />
         ))}
 
@@ -143,13 +228,16 @@ export default function Navbar({ city }) {
         </li>
 
         {/* Se déconnecter - avec style corrigé */}
-        <li className="w-full sm:w-auto text-secondary text-xl py-2 sm:py-0 hover:bg-secondary hover:text-light hover:rounded-[10px] transition-all duration-300 ease-in-out">
-          <Link to="/" className="nav-links flex flex-row items-center p-4">
+        <li
+          className="w-full sm:w-auto text-secondary text-xl py-2 sm:py-0 hover:bg-secondary hover:text-light hover:rounded-[10px] transition-all duration-300 ease-in-out cursor-pointer"
+          onClick={handleLogout}
+        >
+          <div className="flex flex-row items-center p-4">
             <span className="mx-[10px] my-auto text-xl">
               <FaSignOutAlt />
             </span>
             Se déconnecter
-          </Link>
+          </div>
         </li>
       </ul>
     </nav>

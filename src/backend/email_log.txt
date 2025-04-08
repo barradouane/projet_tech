@@ -1,0 +1,106 @@
+2025-04-04 03:00:20 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:00:20	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:20	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:00:20	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:00:20	CLIENT -> SERVER: STARTTLS
+2025-04-04 01:00:20	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-04 01:00:20	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:00:20	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:00:20	CLIENT -> SERVER: AUTH LOGIN
+2025-04-04 01:00:21	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-04 01:00:21	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:00:21	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-04 01:00:21	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:00:21	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-04 01:00:21	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-04 01:00:21	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:21	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-04 01:00:21	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:21	CLIENT -> SERVER: DATA
+2025-04-04 01:00:22	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:22	CLIENT -> SERVER: Date: Fri, 4 Apr 2025 03:00:20 +0200
+2025-04-04 01:00:22	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:00:22	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-04 01:00:22	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-04 01:00:22	CLIENT -> SERVER: Message-ID: <s1OrGtes8ItgTrRLt3lKZCH5OVyYsA4maVOqXhPpjk@localhost>
+2025-04-04 01:00:22	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-04 01:00:22	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-04 01:00:22	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-04 01:00:22	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-04 01:00:22	CLIENT -> SERVER:
+2025-04-04 01:00:22	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a'>http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a</a>
+2025-04-04 01:00:22	CLIENT -> SERVER:
+2025-04-04 01:00:22	CLIENT -> SERVER: .
+2025-04-04 01:00:22	SERVER -> CLIENT: 250 2.0.0 OK  1743728423 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:22	CLIENT -> SERVER: QUIT
+2025-04-04 01:00:23	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a
+
+2025-04-04 03:02:07 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:02:07	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:07	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:02:07	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:02:07	CLIENT -> SERVER: STARTTLS
+2025-04-04 01:02:07	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-04 01:02:08	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:02:08	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:02:08	CLIENT -> SERVER: AUTH LOGIN
+2025-04-04 01:02:08	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-04 01:02:08	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:02:08	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-04 01:02:08	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:02:08	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-04 01:02:08	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-04 01:02:08	SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:08	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-04 01:02:08	SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:08	CLIENT -> SERVER: DATA
+2025-04-04 01:02:09	SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:09	CLIENT -> SERVER: Date: Fri, 4 Apr 2025 03:02:07 +0200
+2025-04-04 01:02:09	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:02:09	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-04 01:02:09	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-04 01:02:09	CLIENT -> SERVER: Message-ID: <uJe1CScxApf9BJJlv27f87gNcHkEj3adi28VV7TUA@localhost>
+2025-04-04 01:02:09	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-04 01:02:09	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-04 01:02:09	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-04 01:02:09	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-04 01:02:09	CLIENT -> SERVER:
+2025-04-04 01:02:09	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2'>http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2</a>
+2025-04-04 01:02:09	CLIENT -> SERVER:
+2025-04-04 01:02:09	CLIENT -> SERVER: .
+2025-04-04 01:02:10	SERVER -> CLIENT: 250 2.0.0 OK  1743728530 ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:10	CLIENT -> SERVER: QUIT
+2025-04-04 01:02:10	SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2
+

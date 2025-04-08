@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import logoImage from "../assets/images/logo.png";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export default function AddContact() {
     const [nom, setNom] = useState("");
     const [prenom, setPrenom] = useState("");
     const [email, setEmail] = useState("");
     const [telephone, setTelephone] = useState("");
+    const [titre, setTitre] = useState(""); // Nouveau champ titre
     const [service, setService] = useState("");
     const [niveauDeFormation, setNiveauDeFormation] = useState("");
     const [site, setSite] = useState(""); // State for site selection
@@ -22,8 +24,9 @@ export default function AddContact() {
             prenom,
             email,
             telephone,
-            service,
-            niveau_de_formation: niveauDeFormation,
+            titre, // Ajout du champ titre
+            service: service || null, // Peut être null
+            niveau_de_formation: niveauDeFormation || null, // Peut être null
             site,
         };
 
@@ -45,43 +48,81 @@ export default function AddContact() {
         }
     };
 
+    // Gestion de la déconnexion
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/logout.php", {
+        method: "POST",
+        credentials: "include", // Important si les sessions sont gérées avec des cookies
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.success); // Afficher le message de succès
+        window.location.href = "/"; // Redirection après déconnexion
+      } else {
+        console.error("Erreur HTTP:", response.status);
+        alert("Erreur lors de la déconnexion.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Impossible de se déconnecter.");
+    }
+  };
+
+
     return (
-        <div className="h-screen flex items-center justify-center bg-white">
-            <nav className="flex justify-between items-center px-[30px] py-0 shadow-[0_5px_15px_rgba(0,0,0,0.25)] w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-[9999] bg-transparent text-white backdrop-blur-[30px] border-[3px] border-white/20 p-[30px] ">
-                {/* Logo */}
-                <img src={logoImage} alt="logo" className="h-[58%] w-[30%] sm:h-[65%] sm:w-[10%]" />
-                <h2 className="sm:text-[20px] text-[18px] font-medium text-secondary">Espace d'édition</h2>
-            </nav>
-            <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-24 ">
+        <div className="h-auto flex items-center justify-center bg-white">
+            {/* Navbar */}
+      <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
+        {/* Logo */}
+        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+
+        {/* Titre */}
+        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+
+        {/* Bouton Se Déconnecter */}
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleLogout}
+        >
+          <FaSignOutAlt className="text-xl" />
+          <span>Se déconnecter</span>
+        </div>
+      </nav>
+            <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-[120px] mb-[50px]">
                 <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                     <label className="flex flex-col">
                         <select
-                            required
                             className="border p-2 rounded"
                             value={service}
                             onChange={(e) => setService(e.target.value)}
                         >
-                            <option value="">-- Choisir un service --</option>
-                            <option value="communication">Communication</option>
-                            <option value="formation">Formation</option>
-                            <option value="informatique">Informatique</option>
-                            <option value="relations-entreprises">Relations entreprises</option>
-                            <option value="vie-associative">Vie associative</option>
+                            <option value="">-- Choisir un service (optionnel) --</option>
+                            <option value="Communication">Communication</option>
+                            <option value="Service formation">Service formation</option>
+                            <option value="Service informatique">Service informatique</option>
+                            <option value="Service relations entreprises">Service relations entreprises</option>
+                            <option value="Service internationales">Service internationales</option>
+                            <option value="Vie associative">Vie associative</option>
                         </select>
                     </label>
                     <label className="flex flex-col">
                         <select
-                            required
                             className="border p-2 rounded"
                             value={niveauDeFormation}
                             onChange={(e) => setNiveauDeFormation(e.target.value)}
                         >
-                            <option value="">-- Choisir un niveau --</option>
-                            <option value="cp1">CP1</option>
-                            <option value="cp2">CP2</option>
-                            <option value="ing1">ING1</option>
-                            <option value="ing2">ING2</option>
-                            <option value="ing3">ING3</option>
+                            <option value="">-- Choisir un niveau (optionnel) --</option>
+                            <option value="CP1">CP1</option>
+                            <option value="CP2">CP2</option>
+                            <option value="ING1">ING1</option>
+                            <option value="ING2">ING2</option>
+                            <option value="ING3">ING3</option>
                         </select>
                     </label>
 
@@ -100,6 +141,13 @@ export default function AddContact() {
                         className="border p-2 rounded"
                         value={prenom}
                         onChange={(e) => setPrenom(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Titre ou description (ex: Responsable pédagogique)"
+                        className="border p-2 rounded"
+                        value={titre}
+                        onChange={(e) => setTitre(e.target.value)}
                     />
                     <input
                         type="email"

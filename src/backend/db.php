@@ -38,7 +38,7 @@ try {
     )";
     $pdo->exec($sql);
 
-     // Création de la table des contacts (ajout du champ site)
+     // Création de la table des contacts (ajout du champ titre et modification des champs service et niveau_de_formation pour permettre NULL)
      $sql = "CREATE TABLE IF NOT EXISTS contacts (
         id INT AUTO_INCREMENT PRIMARY KEY,
         site ENUM('Calais', 'Boulogne', 'Dunkerque', 'Saint-Omer') NOT NULL,
@@ -46,13 +46,20 @@ try {
         prenom VARCHAR(50) NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
         telephone VARCHAR(20) NOT NULL,
-        service VARCHAR(100) NOT NULL,
+        titre VARCHAR(255) DEFAULT NULL,
+        service VARCHAR(100) DEFAULT NULL,
         niveau_de_formation VARCHAR(20) DEFAULT NULL
     );";
     $pdo->exec($sql);
+
+    // Si la table contacts existe déjà, ajouter le champ titre s'il n'existe pas
+    try {
+        $pdo->exec("ALTER TABLE contacts ADD COLUMN titre VARCHAR(255) DEFAULT NULL");
+    } catch (PDOException $e) {
+        // La colonne existe déjà, on ignore l'erreur
+    }
 
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
 ?>
-

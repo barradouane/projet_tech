@@ -1,6 +1,22 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
+import { useLocation } from "react-router-dom";
+
+// Fonction pour extraire le site de l'URL (identique à celle du Navbar)
+const extractSiteFromUrl = (pathname) => {
+  if (pathname.includes("student-space-")) {
+    const sitePart = pathname.split("student-space-")[1];
+    
+    // Mapping des noms de sites dans l'URL vers les noms de props
+    if (sitePart === "calais") return "Calais";
+    if (sitePart === "dunkerque") return "Dunkerque";
+    if (sitePart === "saintomer") return "Saint-Omer";
+    if (sitePart === "boulogne") return "Boulogne";
+  }
+  
+  return null;
+};
 
 export default function Contacts() {
     const liste_des_services = [
@@ -20,17 +36,43 @@ export default function Contacts() {
     const [niveauSelectionne, setNiveauSelectionne] = useState("");
     const [openNiveau, setOpenNiveau] = useState({});
     const [openService, setOpenService] = useState({});
+    const [currentSite, setCurrentSite] = useState("");
+    const location = useLocation();
 
+    // Effet pour déterminer le site actuel (similaire à celui du Navbar)
     useEffect(() => {
-        if (niveauSelectionne) {
+        // 1. Essayer d'extraire le site de l'URL actuelle
+        const siteFromUrl = extractSiteFromUrl(location.pathname);
+        if (siteFromUrl) {
+            localStorage.setItem("lastVisitedSite", siteFromUrl);
+            setCurrentSite(siteFromUrl);
+            return;
+        }
+        
+        // 2. Utiliser le dernier site visité depuis localStorage
+        const lastSite = localStorage.getItem("lastVisitedSite");
+        if (lastSite) {
+            setCurrentSite(lastSite);
+            return;
+        }
+        
+        // 3. Fallback sur un site par défaut
+        setCurrentSite("Calais");
+    }, [location.pathname]);
+
+    // Effet pour charger les contacts du niveau sélectionné quand le niveau ou le site change
+    useEffect(() => {
+        if (niveauSelectionne && currentSite) {
             fetchContacts("niveau", niveauSelectionne);
         }
-    }, [niveauSelectionne]);
+    }, [niveauSelectionne, currentSite]);
 
     const fetchContactsService = async (service) => {
+        if (!currentSite) return;
+        
         try {
             const response = await fetch(
-                `http://localhost:8000/get_contacts.php?service=${service}`
+                `http://localhost:8000/get_contacts.php?service=${service}&site=${currentSite}`
             );
             const data = await response.json();
 
@@ -44,9 +86,11 @@ export default function Contacts() {
     };
 
     const fetchContacts = async (type, value) => {
+        if (!currentSite) return;
+        
         try {
             const response = await fetch(
-                `http://localhost:8000/get_contacts.php?${type}=${value}`
+                `http://localhost:8000/get_contacts.php?${type}=${value}&site=${currentSite}`
             );
             const data = await response.json();
             setContactsNiveau(data.contacts || []);
@@ -74,11 +118,27 @@ export default function Contacts() {
         }
     };
 
+    // Fonction pour afficher un contact avec gestion des valeurs nulles
+    const renderContact = (contact, index, showService = false) => (
+        <li key={index} className="my-2">
+            <p>
+                <strong>
+                    {contact.nom} {contact.prenom}
+                </strong>
+            </p>
+            {contact.titre && <p className="text-primary italic">{contact.titre}</p>}
+            <p>{contact.email}</p>
+            <p>{contact.telephone}</p>
+           
+            
+        </li>
+    );
+
     return (
         <div className="flex flex-col items-center bg-gradient-to-tl from-light to-white pt-36 min-h-screen pb-20">
-            <Navbar />
+            <Navbar city={currentSite} />
             <h1 className="sm:text-4xl text-3xl font-semibold text-secondary sm:mb-4 mb-0">
-                Contacts pédagogiques
+                Contacts pédagogiques {currentSite && `- ${currentSite}`}
             </h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:w-[90%] w-[85%] mt-10">
@@ -109,17 +169,9 @@ export default function Contacts() {
                                 <div className="mt-2 ml-6">
                                     {contactsService[service]?.length > 0 ? (
                                         <ul className="list-disc pl-5">
-                                            {contactsService[service].map((contact, index) => (
-                                                <li key={index} className="my-2">
-                                                    <p>
-                                                        <strong>
-                                                            {contact.nom} {contact.prenom}
-                                                        </strong>
-                                                    </p>
-                                                    <p>{contact.email}</p>
-                                                    <p>{contact.telephone}</p>
-                                                </li>
-                                            ))}
+                                            {contactsService[service].map((contact, index) => 
+                                                renderContact(contact, index)
+                                            )}
                                         </ul>
                                     ) : (
                                         <p className="text-secondary text-sm italic">
@@ -159,20 +211,9 @@ export default function Contacts() {
                                 <div className="mt-2 ml-6">
                                     {contactsNiveau.length > 0 ? (
                                         <ul className="list-disc pl-5">
-                                            {contactsNiveau.map((contact, index) => (
-                                                <li key={index} className="my-2">
-                                                    <p>
-                                                        <strong>
-                                                            {contact.nom} {contact.prenom}
-                                                        </strong>
-                                                    </p>
-                                                    <p>{contact.email}</p>
-                                                    <p>{contact.telephone}</p>
-                                                    <p>
-                                                        <strong>Service:</strong> {contact.service}
-                                                    </p>
-                                                </li>
-                                            ))}
+                                            {contactsNiveau.map((contact, index) => 
+                                                renderContact(contact, index, true)
+                                            )}
                                         </ul>
                                     ) : (
                                         <p className="text-secondary text-sm italic">

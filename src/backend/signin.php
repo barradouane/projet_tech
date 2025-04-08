@@ -1,4 +1,6 @@
 <?php
+session_start(); // Démarrer la session
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -23,15 +25,25 @@ $editorEmail = "editeur@eilco.etu.univ-littoral.fr";
 $editorPass = "editeureilco123";
 
 if ($email === $adminEmail && $password === $adminPass) {
+    // Pour les comptes spéciaux, on peut initialiser quelques variables de session (valeurs par défaut ou spécifiques)
+    $_SESSION['id'] = null; // Pas d'ID défini dans la base
+    $_SESSION['nom'] = "Admin";
+    $_SESSION['prenom'] = "";
+    $_SESSION['site'] = "admin";
     die(json_encode(["success" => "Connexion réussie.", "role" => "admin"]));
 }
 
 if ($email === $editorEmail && $password === $editorPass) {
+    $_SESSION['id'] = null; // Pas d'ID défini dans la base
+    $_SESSION['nom'] = "Editeur";
+    $_SESSION['prenom'] = "";
+    $_SESSION['site'] = "editor";
     die(json_encode(["success" => "Connexion réussie.", "role" => "editor"]));
 }
 
 // Vérifier l'utilisateur normal
-$stmt = $pdo->prepare("SELECT site, password FROM users WHERE email = ?");
+// Modification de la requête pour récupérer id, nom et prenom en plus de site et password
+$stmt = $pdo->prepare("SELECT id, nom, prenom, site, password FROM users WHERE email = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -43,6 +55,11 @@ if (!password_verify($password, $user['password'])) {
     die(json_encode(["error" => "Email ou mot de passe incorrect."]));
 }
 
-// Redirection selon le site
+// Initialisation de la session avec les données de l'utilisateur
+$_SESSION['id'] = $user['id'];
+$_SESSION['nom'] = $user['nom'];
+$_SESSION['prenom'] = $user['prenom'];
+$_SESSION['site'] = $user['site'];
+
 die(json_encode(["success" => "Connexion réussie.", "site" => $user['site']]));
 ?>

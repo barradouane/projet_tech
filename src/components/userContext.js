@@ -1,28 +1,47 @@
-import { createContext, useContext, useState, useEffect } from "react";
+"use client"
 
-// Création du contexte
-const UserContext = createContext();
+// Si vous n'avez pas encore de fichier userContext.jsx, voici un exemple
+import { createContext, useState, useContext, useEffect } from "react"
 
-// Provider qui englobe toute l'app
-export function UserProvider({ children }) {
-  const [user, setUser] = useState(null); // Stocke l'utilisateur connecté
+// Créer le contexte
+const UserContext = createContext()
 
-  useEffect(() => {
-    // Si l'utilisateur est stocké dans le localStorage
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+// Hook personnalisé pour utiliser le contexte
+export const useUser = () => useContext(UserContext)
+
+// Fournisseur du contexte
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(() => {
+    // Initialiser l'état avec les données de localStorage si disponibles
+    const storedUser = localStorage.getItem("user")
     if (storedUser) {
-      setUser(storedUser);
+      try {
+        const parsedUser = JSON.parse(storedUser)
+        return {
+          firstName: parsedUser.prenom || "",
+          lastName: parsedUser.nom || "",
+          site: parsedUser.site || "",
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données utilisateur:", error)
+        return null
+      }
     }
-  }, []); // Ce useEffect s'exécute une seule fois au démarrage
+    return null
+  })
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
+  // Mettre à jour localStorage quand le contexte utilisateur change
+  useEffect(() => {
+    if (user) {
+      const userData = {
+        prenom: user.firstName || "",
+        nom: user.lastName || "",
+        site: user.site || "",
+      }
+      localStorage.setItem("user", JSON.stringify(userData))
+    }
+  }, [user])
+
+  return <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>
 }
 
-// Hook personnalisé pour accéder au user
-export function useUser() {
-  return useContext(UserContext);
-}
