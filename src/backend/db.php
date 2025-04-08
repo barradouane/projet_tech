@@ -20,9 +20,12 @@ try {
         email VARCHAR(100) UNIQUE,
         password VARCHAR(255),
         site ENUM('Calais', 'Boulogne', 'Dunkerque', 'Saint-Omer'),
+        email_verified TINYINT(1) DEFAULT 0,
+        verification_token VARCHAR(100) NULL,
         token VARCHAR(255) NULL
     )";
     $pdo->exec($sql);
+
 
     // Création de la table posts (ajout du champ sites)
     $sql = "CREATE TABLE IF NOT EXISTS posts (

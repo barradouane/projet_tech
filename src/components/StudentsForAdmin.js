@@ -1,7 +1,9 @@
 "use client"
 
+import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { FaSignOutAlt } from "react-icons/fa"
+import logoImage from "../assets/images/logo.png";
+import { FaSignOutAlt ,FaHome} from "react-icons/fa"
 
 export default function StudentsForAdmin() {
   const [students, setStudents] = useState([])
@@ -9,6 +11,13 @@ export default function StudentsForAdmin() {
   const [filterSite, setFilterSite] = useState("all")
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const navigate = useNavigate(); 
+
+
+  const handleAccueil = () => {
+    
+    navigate('/admin-space'); 
+  };
   const [editingStudent, setEditingStudent] = useState(null)
   const [formData, setFormData] = useState({
     nom: "",
@@ -226,13 +235,25 @@ export default function StudentsForAdmin() {
   return (
     <div className="p-6">
       <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
-        <h2 className="text-lg sm:text-xl font-medium">Espace Administrateur</h2>
-        <div
+        {/* Logo */}
+        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+        <div className="flex flex-row">
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleAccueil}
+        >
+          <FaHome className="text-xl" />
+          <span>Accueil</span>
+        </div>
+
+        {/* Bouton Se Déconnecter */}
+        <div 
           className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
           onClick={handleLogout}
         >
           <FaSignOutAlt className="text-xl" />
           <span>Se déconnecter</span>
+        </div>
         </div>
       </nav>
 

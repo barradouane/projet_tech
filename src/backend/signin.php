@@ -1,4 +1,8 @@
 <?php
+// Prevent PHP warnings from breaking JSON output
+ini_set('display_errors', 0);
+error_reporting(E_ERROR);
+
 session_start(); // Démarrer la session
 
 header("Access-Control-Allow-Origin: *");
@@ -42,8 +46,8 @@ if ($email === $editorEmail && $password === $editorPass) {
 }
 
 // Vérifier l'utilisateur normal
-// Modification de la requête pour récupérer id, nom et prenom en plus de site et password
-$stmt = $pdo->prepare("SELECT id, nom, prenom, site, password FROM users WHERE email = ?");
+// Modification de la requête pour récupérer email_verified en plus des autres champs
+$stmt = $pdo->prepare("SELECT id, nom, prenom, site, password, email_verified FROM users WHERE email = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -53,6 +57,15 @@ if (!$user) {
 
 if (!password_verify($password, $user['password'])) {
     die(json_encode(["error" => "Email ou mot de passe incorrect."]));
+}
+
+// Vérifier si l'email est vérifié (seulement pour les utilisateurs normaux)
+if (isset($user['email_verified']) && $user['email_verified'] != 1) {
+    die(json_encode([
+        "error" => "Veuillez vérifier votre email avant de vous connecter.",
+        "unverified" => true,
+        "email" => $email
+    ]));
 }
 
 // Initialisation de la session avec les données de l'utilisateur

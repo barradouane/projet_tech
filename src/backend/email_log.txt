@@ -104,3 +104,56 @@ Lien de réinitialisation: http://localhost:3000/reset-password?token=5e7401c081
 
 Lien de réinitialisation: http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2
 
+2025-04-08 16:53:57 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:53:57	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:53:57	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:53:57	CLIENT -> SERVER: STARTTLS
+2025-04-08 14:53:57	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-08 14:53:57	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:53:57	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:53:57	CLIENT -> SERVER: AUTH LOGIN
+2025-04-08 14:53:57	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-08 14:53:57	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:53:57	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-08 14:53:57	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:53:57	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-08 14:53:57	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-08 14:53:57	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-08 14:53:57	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: DATA
+2025-04-08 14:53:57	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: Date: Tue, 8 Apr 2025 16:53:57 +0200
+2025-04-08 14:53:57	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:53:57	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-08 14:53:57	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-08 14:53:57	CLIENT -> SERVER: Message-ID: <PHYIcX9403K98CFl194bPeHzyLgBgcFNof9lHLic0Q0@localhost>
+2025-04-08 14:53:57	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-08 14:53:57	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-08 14:53:57	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-08 14:53:57	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 14:53:57	CLIENT -> SERVER:
+2025-04-08 14:53:57	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0'>http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0</a>
+2025-04-08 14:53:57	CLIENT -> SERVER:
+2025-04-08 14:53:57	CLIENT -> SERVER: .
+2025-04-08 14:53:58	SERVER -> CLIENT: 250 2.0.0 OK  1744124036 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:58	CLIENT -> SERVER: QUIT
+2025-04-08 14:53:58	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0
+

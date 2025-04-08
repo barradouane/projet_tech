@@ -1,7 +1,8 @@
 import { useState } from "react";
 import logoImage from "../assets/images/logo.png";
-import { Link } from "react-router-dom";
-import { FaSignOutAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom";
+import { FaSignOutAlt , FaHome} from "react-icons/fa";
 
 const AddStudent = () => {
   const [nom, setNom] = useState("");
@@ -11,6 +12,13 @@ const AddStudent = () => {
   const [site, setSite] = useState(""); // Champ site
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); 
+
+
+  const handleAccueil = () => {
+    
+    navigate('/admin-space'); 
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -77,8 +85,15 @@ const AddStudent = () => {
         {/* Logo */}
         <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
 
-        {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace administratif</h2>
+  
+<div className="flex flex-row">
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleAccueil}
+        >
+          <FaHome className="text-xl" />
+          <span>Accueil</span>
+        </div>
 
         {/* Bouton Se Déconnecter */}
         <div 
@@ -87,6 +102,7 @@ const AddStudent = () => {
         >
           <FaSignOutAlt className="text-xl" />
           <span>Se déconnecter</span>
+        </div>
         </div>
       </nav>
       <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-[170px] mb-[50px]">
