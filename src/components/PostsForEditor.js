@@ -1,11 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import logoImage from "../assets/images/logo.png"
-import { FaSignOutAlt } from "react-icons/fa"
+import { FaSignOutAlt , FaHome } from "react-icons/fa"
 
 export default function PostsForEditor() {
   const [posts, setPosts] = useState([])
+  const navigate = useNavigate(); 
   const [filteredPosts, setFilteredPosts] = useState([])
   const [filterType, setFilterType] = useState("all")
   const [loading, setLoading] = useState(true)
@@ -82,6 +84,11 @@ export default function PostsForEditor() {
       setFilteredPosts(posts.filter((post) => post.type === filterType))
     }
   }
+
+  const handleAccueil = () => {
+    
+    navigate('/editor-space'); 
+  };
 
   // Gestion de la modification
   const handleEdit = (post) => {
@@ -239,18 +246,26 @@ export default function PostsForEditor() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
-        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[60%] w-auto" />
+        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
 
-        {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+  
+<div className="flex flex-row">
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleAccueil}
+        >
+          <FaHome className="text-xl" />
+          <span>Accueil</span>
+        </div>
 
         {/* Bouton Se Déconnecter */}
-        <div
+        <div 
           className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
           onClick={handleLogout}
         >
           <FaSignOutAlt className="text-xl" />
           <span>Se déconnecter</span>
+        </div>
         </div>
       </nav>
 

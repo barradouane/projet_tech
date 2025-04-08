@@ -123,7 +123,7 @@ export default function AdminDashboard() {
       </nav>
 
       {/* Contenu principal */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:w-[90%] w-[85%] sm:mt-48 mt-52">
+      <div className="grid grid-cols-1 sm:grid-cols-1 gap-8 sm:w-[50%] w-[85%] sm:mt-48 mt-52">
         <div className="bg-gradient-to-bl from-primary to-secondary p-8 rounded-2xl shadow-xl space-y-6 text-white">
           <h3 className="text-2xl font-semibold">Gestion des étudiants</h3>
           <hr />
@@ -156,29 +156,7 @@ export default function AdminDashboard() {
           
           
         </div>
-        <div className="bg-gradient-to-bl from-primary to-secondary p-8 rounded-2xl shadow-xl space-y-6 text-white">
-          <h3 className="text-2xl font-semibold">Gestion des éditeurs</h3>
-          <hr />
-          <motion.div
-            className="bg-gray-50 text-center text-secondary font-medium p-4 sm:text-lg text-base rounded-lg shadow-md cursor-pointer hover:bg-light"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/students-for-admin")}
-          >
-            <FaUsers className="inline-block mr-2" />
-            Consulter la liste des éditeurs
-          </motion.div>
-          <motion.div
-            className="bg-gray-50 text-secondary p-4 text-center font-medium sm:text-lg text-base rounded-lg shadow-md cursor-pointer hover:bg-light"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => handleNavigation("/add-student")}
-          >
-            <FaUserPlus className="inline-block mr-2" />
-            Ajouter un éditeur
-          </motion.div>
-
-         
-          
-        </div>
+       
       </div>
     </div>
   )

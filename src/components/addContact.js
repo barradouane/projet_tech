@@ -2,10 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import logoImage from "../assets/images/logo.png";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt  , FaHome} from "react-icons/fa";
 
 export default function AddContact() {
     const [nom, setNom] = useState("");
+    const navigate = useNavigate(); 
     const [prenom, setPrenom] = useState("");
     const [email, setEmail] = useState("");
     const [telephone, setTelephone] = useState("");
@@ -13,7 +14,7 @@ export default function AddContact() {
     const [service, setService] = useState("");
     const [niveauDeFormation, setNiveauDeFormation] = useState("");
     const [site, setSite] = useState(""); // State for site selection
-    const navigate = useNavigate();
+   
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,6 +49,11 @@ export default function AddContact() {
         }
     };
 
+
+    const handleAccueil = () => {
+    
+        navigate('/editor-space'); 
+      };
     // Gestion de la déconnexion
   const handleLogout = async () => {
     try {
@@ -78,12 +84,19 @@ export default function AddContact() {
     return (
         <div className="h-auto flex items-center justify-center bg-white">
             {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
+            <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
         <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
 
-        {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+  
+<div className="flex flex-row">
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleAccueil}
+        >
+          <FaHome className="text-xl" />
+          <span>Accueil</span>
+        </div>
 
         {/* Bouton Se Déconnecter */}
         <div 
@@ -92,6 +105,7 @@ export default function AddContact() {
         >
           <FaSignOutAlt className="text-xl" />
           <span>Se déconnecter</span>
+        </div>
         </div>
       </nav>
             <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-[120px] mb-[50px]">

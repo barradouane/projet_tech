@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import logoImage from "../assets/images/logo.png"
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt , FaHome} from "react-icons/fa";
 
 export default function AddData() {
   const [type, setType] = useState('');
@@ -10,6 +11,7 @@ export default function AddData() {
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [image, setImage] = useState(null);
+  const navigate = useNavigate(); 
   const [plus_de_details, setPlus_de_details] = useState('');
   const [selectedSites, setSelectedSites] = useState([]); // Stocke les sites cochés
   const [loading, setLoading] = useState(false); // Pour gérer l'état de chargement
@@ -22,6 +24,11 @@ export default function AddData() {
     setSelectedSites((prev) =>
       prev.includes(site) ? prev.filter((s) => s !== site) : [...prev, site]
     );
+  };
+
+  const handleAccueil = () => {
+    
+    navigate('/editor-space'); 
   };
 
   const handleSubmit = async (e) => {
@@ -112,8 +119,15 @@ export default function AddData() {
         {/* Logo */}
         <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
 
-        {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+  
+<div className="flex flex-row">
+        <div 
+          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+          onClick={handleAccueil}
+        >
+          <FaHome className="text-xl" />
+          <span>Accueil</span>
+        </div>
 
         {/* Bouton Se Déconnecter */}
         <div 
@@ -122,6 +136,7 @@ export default function AddData() {
         >
           <FaSignOutAlt className="text-xl" />
           <span>Se déconnecter</span>
+        </div>
         </div>
       </nav>
 
