@@ -13,7 +13,7 @@ export default function Events({ site }) {
     // Récupération des données depuis get_data
     try {
       // Construire l'URL avec le paramètre site si fourni
-      let url = "http://localhost:8000/get_data.php"
+      let url = "https://projetportailetudiant.eilco-ulco.fr/backend/get_data.php"
       if (site) {
         url += `?site=${encodeURIComponent(site)}`
       }
@@ -70,7 +70,7 @@ export default function Events({ site }) {
           <EventsData
             id={event.id}
             key={index}
-            image={event.image ? `http://localhost:8000/uploads/${event.image}` : "https://via.placeholder.com/300"}
+            image={event.image ? `https://projetportailetudiant.eilco-ulco.fr/backend/uploads/${event.image}` : "https://via.placeholder.com/300"}
             heading={event.titre}
             text={event.description}
             date={event.date}

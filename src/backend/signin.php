@@ -22,10 +22,10 @@ $email = strtolower(trim($data->email));
 $password = $data->password;
 
 // Comptes spéciaux
-$adminEmail = "admin@eilco.etu.univ-littoral.fr";
+$adminEmail = "admin@etu.eilco.univ-littoral.fr";
 $adminPass = "admineilco123";
 
-$editorEmail = "editeur@eilco.etu.univ-littoral.fr";
+$editorEmail = "editeur@etu.eilco.univ-littoral.fr";
 $editorPass = "editeureilco123";
 
 if ($email === $adminEmail && $password === $adminPass) {

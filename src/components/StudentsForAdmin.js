@@ -2,8 +2,8 @@
 
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
-import logoImage from "../assets/images/logo.png";
-import { FaSignOutAlt ,FaHome} from "react-icons/fa"
+import logoImage from "../assets/images/logo.png"
+import { FaSignOutAlt, FaHome, FaBars, FaTimes } from "react-icons/fa"
 
 export default function StudentsForAdmin() {
   const [students, setStudents] = useState([])
@@ -11,13 +11,17 @@ export default function StudentsForAdmin() {
   const [filterSite, setFilterSite] = useState("all")
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const navigate = useNavigate(); 
+  const navigate = useNavigate()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
 
   const handleAccueil = () => {
-    
-    navigate('/admin-space'); 
-  };
+    setMobileMenuOpen(false)
+    navigate("/admin-space")
+  }
   const [editingStudent, setEditingStudent] = useState(null)
   const [formData, setFormData] = useState({
     nom: "",
@@ -37,7 +41,7 @@ export default function StudentsForAdmin() {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch("http://localhost:8000/get_users.php")
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/get_users.php")
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des données.")
       }
@@ -80,7 +84,7 @@ export default function StudentsForAdmin() {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:8000/update_user.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/update_user.php", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -106,32 +110,32 @@ export default function StudentsForAdmin() {
     }
   }
 
-
   // Gestion de la déconnexion
   const handleLogout = async () => {
+    setMobileMenuOpen(false)
     try {
-      const response = await fetch("http://localhost:8000/logout.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/logout.php", {
         method: "POST",
         credentials: "include", // Important si les sessions sont gérées avec des cookies
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
-        }
-      });
+          Accept: "application/json",
+        },
+      })
 
       if (response.ok) {
-        const result = await response.json();
-        alert(result.success); // Afficher le message de succès
-        window.location.href = "/"; // Redirection après déconnexion
+        const result = await response.json()
+        alert(result.success) // Afficher le message de succès
+        window.location.href = "/" // Redirection après déconnexion
       } else {
-        console.error("Erreur HTTP:", response.status);
-        alert("Erreur lors de la déconnexion.");
+        console.error("Erreur HTTP:", response.status)
+        alert("Erreur lors de la déconnexion.")
       }
     } catch (error) {
-      console.error("Erreur:", error);
-      alert("Impossible de se déconnecter.");
+      console.error("Erreur:", error)
+      alert("Impossible de se déconnecter.")
     }
-  };
+  }
 
   const handleDelete = async (id) => {
     if (!window.confirm("Êtes-vous sûr de vouloir supprimer cet étudiant ?")) {
@@ -139,7 +143,7 @@ export default function StudentsForAdmin() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/delete_student.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/delete_student.php", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -236,25 +240,52 @@ export default function StudentsForAdmin() {
     <div className="p-6">
       <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
-        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
-        <div className="flex flex-row">
-        <div 
-          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
-          onClick={handleAccueil}
-        >
-          <FaHome className="text-xl" />
-          <span>Accueil</span>
+        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[60%] w-auto" />
+
+        {/* Hamburger Menu Button (visible only on mobile) */}
+        <button className="md:hidden text-secondary text-2xl focus:outline-none" onClick={toggleMobileMenu}>
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex flex-row">
+          <div
+            className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+            onClick={handleAccueil}
+          >
+            <FaHome className="text-xl" />
+            <span>Accueil</span>
+          </div>
+
+          {/* Bouton Se Déconnecter */}
+          <div
+            className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+            onClick={handleLogout}
+          >
+            <FaSignOutAlt className="text-xl" />
+            <span>Se déconnecter</span>
+          </div>
         </div>
 
-        {/* Bouton Se Déconnecter */}
-        <div 
-          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
-          onClick={handleLogout}
-        >
-          <FaSignOutAlt className="text-xl" />
-          <span>Se déconnecter</span>
-        </div>
-        </div>
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-[80px] right-0 left-0 bg-white shadow-lg rounded-b-[13px] z-50 border border-white/20 border-t-0">
+            <div
+              className="flex items-center justify-center space-x-2 text-secondary text-xl py-4 px-6 cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+              onClick={handleAccueil}
+            >
+              <FaHome className="text-xl" />
+              <span>Accueil</span>
+            </div>
+            <div
+              className="flex items-center justify-center space-x-2 text-secondary text-xl py-4 px-6 cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+              onClick={handleLogout}
+            >
+              <FaSignOutAlt className="text-xl" />
+              <span>Se déconnecter</span>
+            </div>
+          </div>
+        )}
       </nav>
 
       {editingStudent && renderEditForm()}
@@ -342,4 +373,3 @@ export default function StudentsForAdmin() {
     </div>
   )
 }
-

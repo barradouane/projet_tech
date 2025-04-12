@@ -1,15 +1,16 @@
 <?php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'portail_et';
+$host = 'co1610-001.eu.clouddb.ovh.net';  // Hôte de la base de données sur OVH
+$port = '35228';  // Port spécifique fourni par OVH
+$username = 'projetportetu';  // Login de ta BDD
+$password = '0Eilco475';  // Mot de passe pour la connexion à la BDD
+$dbname = 'projetportetu';  // Nom de la base de données sur OVH
 
 try {
-    $pdo = new PDO("mysql:host=$host;port=3307;charset=utf8", $username, $password);
+    // Connexion avec les informations mises à jour
+    $pdo = new PDO("mysql:host=$host;port=$port;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Créer la base de données si elle n'existe pas
-    $pdo->exec("CREATE DATABASE IF NOT EXISTS $dbname CHARACTER SET utf8 COLLATE utf8_general_ci");
+    // Sélection de la base de données
     $pdo->exec("USE $dbname");
 
     // Création de la table users
@@ -26,8 +27,7 @@ try {
     )";
     $pdo->exec($sql);
 
-
-    // Création de la table posts (ajout du champ sites)
+    // Création de la table posts
     $sql = "CREATE TABLE IF NOT EXISTS posts (
         id INT AUTO_INCREMENT PRIMARY KEY,
         type ENUM('actualite', 'evenement') NOT NULL,
@@ -41,8 +41,8 @@ try {
     )";
     $pdo->exec($sql);
 
-     // Création de la table des contacts (ajout du champ titre et modification des champs service et niveau_de_formation pour permettre NULL)
-     $sql = "CREATE TABLE IF NOT EXISTS contacts (
+    // Création de la table contacts
+    $sql = "CREATE TABLE IF NOT EXISTS contacts (
         id INT AUTO_INCREMENT PRIMARY KEY,
         site ENUM('Calais', 'Boulogne', 'Dunkerque', 'Saint-Omer') NOT NULL,
         nom VARCHAR(50) NOT NULL,

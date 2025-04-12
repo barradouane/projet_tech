@@ -32,7 +32,7 @@ const extractSiteFromUrl = (pathname) => {
 //Gestion de la déconnexion
 const handleLogout = async () => {
   try {
-    const response = await fetch("http://localhost:8000/logout.php", {
+    const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/logout.php", {
       method: "POST",
       credentials: "include", // Important si les sessions sont gérées avec des cookies
       headers: {

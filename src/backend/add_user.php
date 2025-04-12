@@ -28,6 +28,7 @@ class AdminUserManager
      * Ajoute un nouvel utilisateur dans la table 'users'.
      *
      * Le mot de passe fourni est d'abord haché pour assurer la sécurité.
+     * L'utilisateur est automatiquement vérifié (email_verified = 1)
      *
      * @param string $nom      Le nom de l'utilisateur
      * @param string $prenom   Le prénom de l'utilisateur
@@ -42,9 +43,9 @@ class AdminUserManager
         // On hache le mot de passe avec l'algorithme par défaut (actuellement bcrypt)
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // Préparation de la requête SQL pour insérer l'utilisateur sans le champ token
-        $sql = "INSERT INTO users (nom, prenom, email, password, site) 
-                VALUES (:nom, :prenom, :email, :password, :site)";
+        // Préparation de la requête SQL pour insérer l'utilisateur avec email_verified = 1
+        $sql = "INSERT INTO users (nom, prenom, email, password, site, email_verified) 
+                VALUES (:nom, :prenom, :email, :password, :site, 1)";
         $stmt = $this->pdo->prepare($sql);
 
         // Exécution de la requête avec les valeurs fournies, le mot de passe étant haché

@@ -10,7 +10,7 @@ export default function EditorSpace() {
   // Gestion de la déconnexion
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:8000/logout.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/logout.php", {
         method: "POST",
         credentials: "include", // Important si les sessions sont gérées avec des cookies
         headers: {
@@ -44,21 +44,20 @@ export default function EditorSpace() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
-        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[60%] w-auto" />
 
         {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace d'édition</h2>
+        <h2 className="text-md sm:text-lg md:text-xl font-medium text-center sm:text-center">Espace d'édition</h2>
 
         {/* Bouton Se Déconnecter */}
-        <div 
+        <div
           className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
           onClick={handleLogout}
         >
           <FaSignOutAlt className="text-xl" />
-          <span>Se déconnecter</span>
+          <span className="hidden sm:inline">Se déconnecter</span>
         </div>
       </nav>
-
  
       
 

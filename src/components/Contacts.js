@@ -72,7 +72,7 @@ export default function Contacts() {
         
         try {
             const response = await fetch(
-                `http://localhost:8000/get_contacts.php?service=${service}&site=${currentSite}`
+                `https://projetportailetudiant.eilco-ulco.fr/backend/get_contacts.php?service=${service}&site=${currentSite}`
             );
             const data = await response.json();
 
@@ -90,7 +90,7 @@ export default function Contacts() {
         
         try {
             const response = await fetch(
-                `http://localhost:8000/get_contacts.php?${type}=${value}&site=${currentSite}`
+                `   https://projetportailetudiant.eilco-ulco.fr/backend/get_contacts.php?${type}=${value}&site=${currentSite}`
             );
             const data = await response.json();
             setContactsNiveau(data.contacts || []);

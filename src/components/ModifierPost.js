@@ -18,7 +18,7 @@ export default function ModifierPost() {
     useEffect(() => {
         const fetchPostData = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/get_data.php?id=${postId}`);
+                const response = await fetch(`https://projetportailetudiant.eilco-ulco.fr/backend/get_data.php?id=${postId}`);
                 const data = await response.json();
     
                 console.log("Données reçues:", data); 
@@ -56,7 +56,7 @@ export default function ModifierPost() {
         };
 
         try {
-            const response = await fetch("http://localhost:8000/update_posts.php", {
+            const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/update_posts.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

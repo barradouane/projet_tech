@@ -11,7 +11,7 @@ export default function News({ site }) {
 
   const fetchNews = async () => {
     try {
-      let url = "http://localhost:8000/get_data.php";
+      let url = "https://projetportailetudiant.eilco-ulco.fr/backend/get_data.php";
       if (site) {
         url += `?site=${encodeURIComponent(site)}`;
       }
@@ -66,7 +66,7 @@ export default function News({ site }) {
           <NewsData
           id={news.id}
           key={index}
-          image={news.image ? `http://localhost:8000/uploads/${news.image}` : "https://via.placeholder.com/300"}
+          image={news.image ? `https://projetportailetudiant.eilco-ulco.fr/backend//uploads/${news.image}` : "https://via.placeholder.com/300"}
           heading={news.titre}
           text={news.description}
           newsDataDetailed={news.newsDataDetailed}  

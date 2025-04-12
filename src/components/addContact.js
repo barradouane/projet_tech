@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import logoImage from "../assets/images/logo.png";
-import { FaSignOutAlt  , FaHome} from "react-icons/fa";
+import { FaSignOutAlt  , FaHome , FaTimes , FaBars} from "react-icons/fa";
 
 export default function AddContact() {
     const [nom, setNom] = useState("");
@@ -14,6 +14,11 @@ export default function AddContact() {
     const [service, setService] = useState("");
     const [niveauDeFormation, setNiveauDeFormation] = useState("");
     const [site, setSite] = useState(""); // State for site selection
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
    
 
     const handleSubmit = async (e) => {
@@ -32,7 +37,7 @@ export default function AddContact() {
         };
 
         try {
-            const response = await fetch("http://localhost:8000/add_contacts.php", {
+            const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/add_contacts.php", {
                 method: "POST",
                 body: new URLSearchParams(data), // Convert the data object to form data
             });
@@ -57,7 +62,7 @@ export default function AddContact() {
     // Gestion de la déconnexion
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:8000/logout.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/logout.php", {
         method: "POST",
         credentials: "include", // Important si les sessions sont gérées avec des cookies
         headers: {
@@ -86,27 +91,52 @@ export default function AddContact() {
             {/* Navbar */}
             <nav className="flex justify-between items-center px-8 py-2 shadow-lg w-[95%] h-[80px] rounded-[13px] fixed top-[20px] left-1/2 transform -translate-x-1/2 z-50 bg-white text-secondary backdrop-blur-lg border border-white/20">
         {/* Logo */}
-        <img src={logoImage} alt="logo" className="h-[60%] w-auto" />
+        <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[60%] w-auto" />
 
-  
-<div className="flex flex-row">
-        <div 
-          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
-          onClick={handleAccueil}
-        >
-          <FaHome className="text-xl" />
-          <span>Accueil</span>
+        {/* Hamburger Menu Button (visible only on mobile) */}
+        <button className="md:hidden text-secondary text-2xl focus:outline-none" onClick={toggleMobileMenu}>
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex flex-row">
+          <div
+            className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+            onClick={handleAccueil}
+          >
+            <FaHome className="text-xl" />
+            <span>Accueil</span>
+          </div>
+
+          {/* Bouton Se Déconnecter */}
+          <div
+            className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+            onClick={handleLogout}
+          >
+            <FaSignOutAlt className="text-xl" />
+            <span>Se déconnecter</span>
+          </div>
         </div>
 
-        {/* Bouton Se Déconnecter */}
-        <div 
-          className="flex items-center justify-center space-x-2 text-secondary text-xl py-2 px-4 sm:px-6 rounded-[10px] cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
-          onClick={handleLogout}
-        >
-          <FaSignOutAlt className="text-xl" />
-          <span>Se déconnecter</span>
-        </div>
-        </div>
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-[80px] right-0 left-0 bg-white shadow-lg rounded-b-[13px] z-50 border border-white/20 border-t-0">
+            <div
+              className="flex items-center justify-center space-x-2 text-secondary text-xl py-4 px-6 cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+              onClick={handleAccueil}
+            >
+              <FaHome className="text-xl" />
+              <span>Accueil</span>
+            </div>
+            <div
+              className="flex items-center justify-center space-x-2 text-secondary text-xl py-4 px-6 cursor-pointer hover:bg-secondary hover:text-light transition-all duration-300 ease-in-out"
+              onClick={handleLogout}
+            >
+              <FaSignOutAlt className="text-xl" />
+              <span>Se déconnecter</span>
+            </div>
+          </div>
+        )}
       </nav>
             <div className="border-[1px] border-secondary max-w-lg sm:w-full w-[85%] p-6 bg-white shadow-lg rounded-[20px] mt-[120px] mb-[50px]">
                 <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

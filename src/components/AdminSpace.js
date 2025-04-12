@@ -26,7 +26,7 @@ export default function AdminDashboard() {
       formData.append("excelFile", file)
 
       try {
-        const response = await fetch("http://localhost:8000/import_users.php", {
+        const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/import_users.php", {
           method: "POST",
           body: formData,
           // Don't set Content-Type header when using FormData
@@ -38,32 +38,32 @@ export default function AdminDashboard() {
         }
 
         const result = await response.json()
-        
+
         if (result.success) {
           setImportStatus({
             type: "success",
-            message: result.success
+            message: result.success,
           })
-          
+
           if (result.errors && result.errors.length > 0) {
             console.log("Erreurs:", result.errors)
             setImportStatus({
               type: "warning",
               message: `${result.success} Cependant, ${result.errors.length} erreur(s) sont survenues.`,
-              details: result.errors
+              details: result.errors,
             })
           }
         } else if (result.error) {
           setImportStatus({
             type: "error",
-            message: result.error
+            message: result.error,
           })
         }
       } catch (error) {
         console.error("Erreur:", error)
         setImportStatus({
           type: "error",
-          message: error.message || "Une erreur s'est produite lors de l'importation."
+          message: error.message || "Une erreur s'est produite lors de l'importation.",
         })
       } finally {
         setIsLoading(false)
@@ -79,7 +79,7 @@ export default function AdminDashboard() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:8000/logout.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/logout.php", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
         <img src={logoImage || "/placeholder.svg"} alt="logo" className="h-[60%] w-auto" />
 
         {/* Titre */}
-        <h2 className="text-lg sm:text-xl font-medium">Espace administratif</h2>
+        <h2 className="text-md sm:text-lg md:text-xl font-medium text-center sm:text-center">Espace administratif</h2>
 
         {/* Bouton Se Déconnecter */}
         <div
@@ -118,7 +118,7 @@ export default function AdminDashboard() {
           onClick={handleLogout}
         >
           <FaSignOutAlt className="text-xl" />
-          <span>Se déconnecter</span>
+          <span className="hidden sm:inline">Se déconnecter</span>
         </div>
       </nav>
 
@@ -153,10 +153,7 @@ export default function AdminDashboard() {
             <FaFileExcel className="inline-block mr-2" />
             {isLoading ? "Importation en cours..." : "Importer des étudiants via un fichier excel"}
           </motion.div>
-          
-          
         </div>
-       
       </div>
     </div>
   )

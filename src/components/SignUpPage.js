@@ -28,7 +28,7 @@ const SignUpPage = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch("http://localhost:8000/signup.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

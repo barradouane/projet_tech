@@ -18,7 +18,7 @@ export default function SignInPage() {
     setError("")
 
     try {
-      const response = await fetch("http://localhost:8000/signin.php", {
+      const response = await fetch("https://projetportailetudiant.eilco-ulco.fr/backend/signin.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -30,9 +30,9 @@ export default function SignInPage() {
         // Mettre à jour le contexte User
         setUser({ firstName: data.firstName, lastName: data.lastName })
 
-        if (email === "admin@eilco.etu.univ-littoral.fr" && password === "admineilco123") {
+        if (email === "admin@etu.eilco.univ-littoral.fr" && password === "admineilco123") {
           navigate("/admin-space")
-        } else if (email === "editeur@eilco.etu.univ-littoral.fr" && password === "editeureilco123") {
+        } else if (email === "editeur@etu.eilco.univ-littoral.fr" && password === "editeureilco123") {
           navigate("/editor-space")
         } else {
           switch (data.site) {
