@@ -53,7 +53,7 @@ function App() {
       <HashRouter>
         <Routes>
           {/* Authentification */}
-          <Route path="/" element={<StudentSpaceCalais />} />
+          <Route path="/" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
