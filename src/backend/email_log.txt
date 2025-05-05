@@ -1,0 +1,747 @@
+2025-04-04 03:00:20 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:00:20	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:20	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:00:20	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:00:20	CLIENT -> SERVER: STARTTLS
+2025-04-04 01:00:20	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-04 01:00:20	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:00:20	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:00:20	CLIENT -> SERVER: AUTH LOGIN
+2025-04-04 01:00:21	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-04 01:00:21	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:00:21	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-04 01:00:21	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:00:21	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-04 01:00:21	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-04 01:00:21	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:21	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-04 01:00:21	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:21	CLIENT -> SERVER: DATA
+2025-04-04 01:00:22	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:22	CLIENT -> SERVER: Date: Fri, 4 Apr 2025 03:00:20 +0200
+2025-04-04 01:00:22	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:00:22	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-04 01:00:22	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-04 01:00:22	CLIENT -> SERVER: Message-ID: <s1OrGtes8ItgTrRLt3lKZCH5OVyYsA4maVOqXhPpjk@localhost>
+2025-04-04 01:00:22	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-04 01:00:22	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-04 01:00:22	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-04 01:00:22	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-04 01:00:22	CLIENT -> SERVER:
+2025-04-04 01:00:22	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a'>http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a</a>
+2025-04-04 01:00:22	CLIENT -> SERVER:
+2025-04-04 01:00:22	CLIENT -> SERVER: .
+2025-04-04 01:00:22	SERVER -> CLIENT: 250 2.0.0 OK  1743728423 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+2025-04-04 01:00:22	CLIENT -> SERVER: QUIT
+2025-04-04 01:00:23	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43ec34bbd9csm31866575e9.20 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=5e7401c081841110116373172e55dc7205bfc267f9526c209b6d852d2d435f8a
+
+2025-04-04 03:02:07 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:02:07	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:07	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:02:07	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:02:07	CLIENT -> SERVER: STARTTLS
+2025-04-04 01:02:07	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-04 01:02:08	CLIENT -> SERVER: EHLO localhost
+2025-04-04 01:02:08	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:cf5:bb04:54b3:57ff]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-04 01:02:08	CLIENT -> SERVER: AUTH LOGIN
+2025-04-04 01:02:08	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-04 01:02:08	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:02:08	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-04 01:02:08	CLIENT -> SERVER: [credentials hidden]
+2025-04-04 01:02:08	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-04 01:02:08	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-04 01:02:08	SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:08	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-04 01:02:08	SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:08	CLIENT -> SERVER: DATA
+2025-04-04 01:02:09	SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:09	CLIENT -> SERVER: Date: Fri, 4 Apr 2025 03:02:07 +0200
+2025-04-04 01:02:09	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-04 01:02:09	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-04 01:02:09	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-04 01:02:09	CLIENT -> SERVER: Message-ID: <uJe1CScxApf9BJJlv27f87gNcHkEj3adi28VV7TUA@localhost>
+2025-04-04 01:02:09	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-04 01:02:09	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-04 01:02:09	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-04 01:02:09	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-04 01:02:09	CLIENT -> SERVER:
+2025-04-04 01:02:09	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2'>http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2</a>
+2025-04-04 01:02:09	CLIENT -> SERVER:
+2025-04-04 01:02:09	CLIENT -> SERVER: .
+2025-04-04 01:02:10	SERVER -> CLIENT: 250 2.0.0 OK  1743728530 ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+2025-04-04 01:02:10	CLIENT -> SERVER: QUIT
+2025-04-04 01:02:10	SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-39c30227e3bsm3031112f8f.100 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=eba966f86a6ce237051a4920e88c3a17896078d94a1e5e83c66ae988dce965c2
+
+2025-04-08 16:53:57 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:53:57	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:53:57	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:53:57	CLIENT -> SERVER: STARTTLS
+2025-04-08 14:53:57	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-08 14:53:57	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:53:57	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:53:57	CLIENT -> SERVER: AUTH LOGIN
+2025-04-08 14:53:57	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-08 14:53:57	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:53:57	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-08 14:53:57	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:53:57	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-08 14:53:57	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-08 14:53:57	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-08 14:53:57	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: DATA
+2025-04-08 14:53:57	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:57	CLIENT -> SERVER: Date: Tue, 8 Apr 2025 16:53:57 +0200
+2025-04-08 14:53:57	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:53:57	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-08 14:53:57	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-08 14:53:57	CLIENT -> SERVER: Message-ID: <PHYIcX9403K98CFl194bPeHzyLgBgcFNof9lHLic0Q0@localhost>
+2025-04-08 14:53:57	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-08 14:53:57	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-08 14:53:57	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-08 14:53:57	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 14:53:57	CLIENT -> SERVER:
+2025-04-08 14:53:57	CLIENT -> SERVER: Clique ici pour réinitialiser votre mot de passe : <a href='http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0'>http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0</a>
+2025-04-08 14:53:57	CLIENT -> SERVER:
+2025-04-08 14:53:57	CLIENT -> SERVER: .
+2025-04-08 14:53:58	SERVER -> CLIENT: 250 2.0.0 OK  1744124036 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+2025-04-08 14:53:58	CLIENT -> SERVER: QUIT
+2025-04-08 14:53:58	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43ec34bbc64sm161905065e9.21 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=767270765c9e582fbec05ee68cac142ca7840545b9bcacbe3cfee0e4a3bf80f0
+
+2025-04-08 16:59:31 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:59:31	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+2025-04-08 14:59:31	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:59:31	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:59:31	CLIENT -> SERVER: STARTTLS
+2025-04-08 14:59:31	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-08 14:59:31	CLIENT -> SERVER: EHLO localhost
+2025-04-08 14:59:31	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 14:59:31	CLIENT -> SERVER: AUTH LOGIN
+2025-04-08 14:59:31	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-08 14:59:31	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:59:31	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-08 14:59:31	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 14:59:31	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-08 14:59:31	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-08 14:59:31	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+2025-04-08 14:59:31	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-08 14:59:31	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+2025-04-08 14:59:31	CLIENT -> SERVER: DATA
+2025-04-08 14:59:31	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+2025-04-08 14:59:31	CLIENT -> SERVER: Date: Tue, 8 Apr 2025 16:59:31 +0200
+2025-04-08 14:59:31	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 14:59:31	CLIENT -> SERVER: From: =?iso-8859-1?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-08 14:59:31	CLIENT -> SERVER: Subject: =?iso-8859-1?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-08 14:59:31	CLIENT -> SERVER: Message-ID: <c95OtlDARrsphNvmIIYP29FxZfkrwbq1kFw9tHejm8@localhost>
+2025-04-08 14:59:31	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-08 14:59:31	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Type: multipart/alternative;
+2025-04-08 14:59:31	CLIENT -> SERVER:  boundary="b1=_c95OtlDARrsphNvmIIYP29FxZfkrwbq1kFw9tHejm8"
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: --b1=_c95OtlDARrsphNvmIIYP29FxZfkrwbq1kFw9tHejm8
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Type: text/plain; charset=iso-8859-1
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Bonjour,
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: http://localhost:3000/reset-password?token=28caa050108f6ba618d636eccc8c95ac0d7aef12eb587260d0e87cae8c5a90f0
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Ce lien expirera dans 1 heure pour des raisons de sécurité.
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: Portail Étudiant
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: --b1=_c95OtlDARrsphNvmIIYP29FxZfkrwbq1kFw9tHejm8
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+2025-04-08 14:59:31	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:                 <html>
+2025-04-08 14:59:31	CLIENT -> SERVER:                 <head>
+2025-04-08 14:59:31	CLIENT -> SERVER:                     <style>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         body {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             font-family: Arial, sans-serif;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             line-height: 1.6;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             color: #333333;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .email-container {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             max-width: 600px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             margin: 0 auto;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             padding: 20px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             border: 1px solid #e4e4e4;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             border-radius: 5px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             background-color: #f9f9f9;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .header {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             text-align: center;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             padding: 20px 0;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             border-bottom: 2px solid #eaeaea;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .content {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             padding: 20px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             background-color: #ffffff;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             border-radius: 4px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .button {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             display: inline-block;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             padding: 12px 24px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             background-color: #4a86e8;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             color: #ffffff !important;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             text-decoration: none;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             border-radius: 4px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             font-weight: bold;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             margin: 20px 0;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .footer {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             margin-top: 20px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             text-align: center;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             font-size: 12px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             color: #888888;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                         .warning {
+2025-04-08 14:59:31	CLIENT -> SERVER:                             font-size: 12px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             color: #777;
+2025-04-08 14:59:31	CLIENT -> SERVER:                             margin-top: 15px;
+2025-04-08 14:59:31	CLIENT -> SERVER:                         }
+2025-04-08 14:59:31	CLIENT -> SERVER:                     </style>
+2025-04-08 14:59:31	CLIENT -> SERVER:                 </head>
+2025-04-08 14:59:31	CLIENT -> SERVER:                 <body>
+2025-04-08 14:59:31	CLIENT -> SERVER:                     <div class='email-container'>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         <div class='header'>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <h2>Réinitialisation de votre mot de passe</h2>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         </div>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         <div class='content'>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>Bonjour,</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <div style='text-align: center;'>
+2025-04-08 14:59:31	CLIENT -> SERVER:                                 <a href='http://localhost:3000/reset-password?token=28caa050108f6ba618d636eccc8c95ac0d7aef12eb587260d0e87cae8c5a90f0' class='button'>Réinitialiser mon mot de passe</a>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             </div>
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p class='warning'>Ce lien de réinitialisation expirera dans 1 heure pour des raisons de sécurité.</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         </div>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         <div class='footer'>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre.</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:                             <p>&copy; 2025 Portail Étudiant - Tous droits réservés</p>
+2025-04-08 14:59:31	CLIENT -> SERVER:                         </div>
+2025-04-08 14:59:31	CLIENT -> SERVER:                     </div>
+2025-04-08 14:59:31	CLIENT -> SERVER:                 </body>
+2025-04-08 14:59:31	CLIENT -> SERVER:                 </html>
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: --b1=_c95OtlDARrsphNvmIIYP29FxZfkrwbq1kFw9tHejm8--
+2025-04-08 14:59:31	CLIENT -> SERVER:
+2025-04-08 14:59:31	CLIENT -> SERVER: .
+2025-04-08 14:59:32	SERVER -> CLIENT: 250 2.0.0 OK  1744124371 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+2025-04-08 14:59:32	CLIENT -> SERVER: QUIT
+2025-04-08 14:59:32	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43f10d49d8esm16746765e9.0 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=28caa050108f6ba618d636eccc8c95ac0d7aef12eb587260d0e87cae8c5a90f0
+
+2025-04-08 17:00:59 - Tentative d'envoi d'email à nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 15:00:59	SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+2025-04-08 15:00:59	CLIENT -> SERVER: EHLO localhost
+2025-04-08 15:00:59	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-STARTTLS
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 15:00:59	CLIENT -> SERVER: STARTTLS
+2025-04-08 15:00:59	SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+2025-04-08 15:00:59	CLIENT -> SERVER: EHLO localhost
+2025-04-08 15:00:59	SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2a01:cb0c:4cd:1000:348f:6b05:6ad1:c58e]
+                   	                  250-SIZE 35882577
+                   	                  250-8BITMIME
+                   	                  250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+                   	                  250-ENHANCEDSTATUSCODES
+                   	                  250-PIPELINING
+                   	                  250-CHUNKING
+                   	                  250 SMTPUTF8
+2025-04-08 15:00:59	CLIENT -> SERVER: AUTH LOGIN
+2025-04-08 15:00:59	SERVER -> CLIENT: 334 VXNlcm5hbWU6
+2025-04-08 15:00:59	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 15:00:59	SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+2025-04-08 15:00:59	CLIENT -> SERVER: [credentials hidden]
+2025-04-08 15:00:59	SERVER -> CLIENT: 235 2.7.0 Accepted
+2025-04-08 15:00:59	CLIENT -> SERVER: MAIL FROM:<no-reply@portail.com>
+2025-04-08 15:00:59	SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+2025-04-08 15:00:59	CLIENT -> SERVER: RCPT TO:<nawal.malki@etu.eilco.univ-littoral.fr>
+2025-04-08 15:00:59	SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+2025-04-08 15:00:59	CLIENT -> SERVER: DATA
+2025-04-08 15:00:59	SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+2025-04-08 15:00:59	CLIENT -> SERVER: Date: Tue, 8 Apr 2025 17:00:59 +0200
+2025-04-08 15:00:59	CLIENT -> SERVER: To: nawal.malki@etu.eilco.univ-littoral.fr
+2025-04-08 15:00:59	CLIENT -> SERVER: From: =?UTF-8?Q?Portail_=C3=89tudiant?= <no-reply@portail.com>
+2025-04-08 15:00:59	CLIENT -> SERVER: Subject: =?UTF-8?Q?R=C3=A9initialisation_mot_de_passe?=
+2025-04-08 15:00:59	CLIENT -> SERVER: Message-ID: <GjznqQlMIlNYDFa24j0sDtEupVz8liEDJh6S70IeDRA@localhost>
+2025-04-08 15:00:59	CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+2025-04-08 15:00:59	CLIENT -> SERVER: MIME-Version: 1.0
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Type: multipart/alternative;
+2025-04-08 15:00:59	CLIENT -> SERVER:  boundary="b1=_GjznqQlMIlNYDFa24j0sDtEupVz8liEDJh6S70IeDRA"
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: --b1=_GjznqQlMIlNYDFa24j0sDtEupVz8liEDJh6S70IeDRA
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Bonjour,
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: http://localhost:3000/reset-password?token=59993653f0d88bf323c14fb07dc0e81cc2e322a66ca02ba720776d69dd2fc995
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Ce lien expirera dans 1 heure pour des raisons de sécurité.
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: Portail Étudiant
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: --b1=_GjznqQlMIlNYDFa24j0sDtEupVz8liEDJh6S70IeDRA
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+2025-04-08 15:00:59	CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:                 <html>
+2025-04-08 15:00:59	CLIENT -> SERVER:                 <head>
+2025-04-08 15:00:59	CLIENT -> SERVER:                     <style>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         body {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             font-family: Arial, sans-serif;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             line-height: 1.6;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             color: #333333;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .email-container {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             max-width: 600px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             margin: 0 auto;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             padding: 20px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             border: 1px solid #e4e4e4;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             border-radius: 5px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             background-color: #f9f9f9;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .header {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             text-align: center;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             padding: 20px 0;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             border-bottom: 2px solid #eaeaea;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .content {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             padding: 20px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             background-color: #ffffff;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             border-radius: 4px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .button {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             display: inline-block;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             padding: 12px 24px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             background-color: #4a86e8;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             color: #ffffff !important;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             text-decoration: none;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             border-radius: 4px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             font-weight: bold;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             margin: 20px 0;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .footer {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             margin-top: 20px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             text-align: center;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             font-size: 12px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             color: #888888;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                         .warning {
+2025-04-08 15:00:59	CLIENT -> SERVER:                             font-size: 12px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             color: #777;
+2025-04-08 15:00:59	CLIENT -> SERVER:                             margin-top: 15px;
+2025-04-08 15:00:59	CLIENT -> SERVER:                         }
+2025-04-08 15:00:59	CLIENT -> SERVER:                     </style>
+2025-04-08 15:00:59	CLIENT -> SERVER:                 </head>
+2025-04-08 15:00:59	CLIENT -> SERVER:                 <body>
+2025-04-08 15:00:59	CLIENT -> SERVER:                     <div class='email-container'>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         <div class='header'>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <h2>Réinitialisation de votre mot de passe</h2>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         </div>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         <div class='content'>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>Bonjour,</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte sur le Portail Étudiant.</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <div style='text-align: center;'>
+2025-04-08 15:00:59	CLIENT -> SERVER:                                 <a href='http://localhost:3000/reset-password?token=59993653f0d88bf323c14fb07dc0e81cc2e322a66ca02ba720776d69dd2fc995' class='button'>Réinitialiser mon mot de passe</a>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             </div>
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>Si vous n'avez pas demandé cette réinitialisation, vous pouvez ignorer cet email en toute sécurité.</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p class='warning'>Ce lien de réinitialisation expirera dans 1 heure pour des raisons de sécurité.</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         </div>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         <div class='footer'>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>Cet email a été envoyé automatiquement, merci de ne pas y répondre.</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:                             <p>&copy; 2025 Portail Étudiant - Tous droits réservés</p>
+2025-04-08 15:00:59	CLIENT -> SERVER:                         </div>
+2025-04-08 15:00:59	CLIENT -> SERVER:                     </div>
+2025-04-08 15:00:59	CLIENT -> SERVER:                 </body>
+2025-04-08 15:00:59	CLIENT -> SERVER:                 </html>
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: --b1=_GjznqQlMIlNYDFa24j0sDtEupVz8liEDJh6S70IeDRA--
+2025-04-08 15:00:59	CLIENT -> SERVER:
+2025-04-08 15:00:59	CLIENT -> SERVER: .
+2025-04-08 15:01:00	SERVER -> CLIENT: 250 2.0.0 OK  1744124459 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+2025-04-08 15:01:00	CLIENT -> SERVER: QUIT
+2025-04-08 15:01:00	SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-43ec16a3aefsm166910945e9.21 - gsmtp
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=59993653f0d88bf323c14fb07dc0e81cc2e322a66ca02ba720776d69dd2fc995
+
+2025-04-19 22:51:44 - Tentative d'envoi d'email à amine.barradouane@etu.eilco.univ-littoral.fr
+2025-04-19 20:51:44 SERVER -&gt; CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+2025-04-19 20:51:44 CLIENT -&gt; SERVER: EHLO localhost<br>
+2025-04-19 20:51:44 SERVER -&gt; CLIENT: 250-smtp.gmail.com at your service, [77.128.85.168]250-SIZE 35882577250-8BITMIME250-STARTTLS250-ENHANCEDSTATUSCODES250-PIPELINING250-CHUNKING250 SMTPUTF8<br>
+2025-04-19 20:51:44 CLIENT -&gt; SERVER: STARTTLS<br>
+2025-04-19 20:51:44 SERVER -&gt; CLIENT: 220 2.0.0 Ready to start TLS<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: EHLO localhost<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 250-smtp.gmail.com at your service, [77.128.85.168]250-SIZE 35882577250-8BITMIME250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH250-ENHANCEDSTATUSCODES250-PIPELINING250-CHUNKING250 SMTPUTF8<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: AUTH LOGIN<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 334 VXNlcm5hbWU6<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: [credentials hidden]<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 334 UGFzc3dvcmQ6<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: [credentials hidden]<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 235 2.7.0 Accepted<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: MAIL FROM:&lt;no-reply@portail.com&gt;<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 250 2.1.0 OK 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: RCPT TO:&lt;amine.barradouane@etu.eilco.univ-littoral.fr&gt;<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 250 2.1.5 OK 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: DATA<br>
+2025-04-19 20:51:45 SERVER -&gt; CLIENT: 354 Go ahead 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Date: Sat, 19 Apr 2025 22:51:44 +0200<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: To: amine.barradouane@etu.eilco.univ-littoral.fr<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: From: =?UTF-8?Q?Portail_=C3=89tudiant?= &lt;no-reply@portail.com&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Subject: =?UTF-8?Q?R=C3=A9initialisation_mot_de_passe?=<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Message-ID: &lt;P8tG7sYYFqr4a5QIBILpN38zgmBznwS5lZv8rUCQWXI@localhost&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: MIME-Version: 1.0<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Type: multipart/alternative;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:  boundary=&quot;b1=_P8tG7sYYFqr4a5QIBILpN38zgmBznwS5lZv8rUCQWXI&quot;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: --b1=_P8tG7sYYFqr4a5QIBILpN38zgmBznwS5lZv8rUCQWXI<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Type: text/plain; charset=UTF-8<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Bonjour,<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Nous avons re&ccedil;u une demande de r&eacute;initialisation de mot de passe pour votre compte sur le Portail &Eacute;tudiant.<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Pour r&eacute;initialiser votre mot de passe, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: http://localhost:3000/reset-password?token=7603e855e533ce0ac028c305d0b48057d76376dcaf82311fbdff21eb52438040<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Si vous n&#039;avez pas demand&eacute; cette r&eacute;initialisation, vous pouvez ignorer cet email en toute s&eacute;curit&eacute;.<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Ce lien expirera dans 1 heure pour des raisons de s&eacute;curit&eacute;.<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Portail &Eacute;tudiant<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: --b1=_P8tG7sYYFqr4a5QIBILpN38zgmBznwS5lZv8rUCQWXI<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Type: text/html; charset=UTF-8<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;html&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;head&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                     &lt;style&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         body {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             font-family: Arial, sans-serif;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             line-height: 1.6;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             color: #333333;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .email-container {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             max-width: 600px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             margin: 0 auto;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             padding: 20px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             border: 1px solid #e4e4e4;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             border-radius: 5px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             background-color: #f9f9f9;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .header {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             text-align: center;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             padding: 20px 0;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             border-bottom: 2px solid #eaeaea;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .content {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             padding: 20px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             background-color: #ffffff;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             border-radius: 4px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .button {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             display: inline-block;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             padding: 12px 24px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             background-color: #4a86e8;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             color: #ffffff !important;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             text-decoration: none;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             border-radius: 4px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             font-weight: bold;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             margin: 20px 0;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .footer {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             margin-top: 20px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             text-align: center;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             font-size: 12px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             color: #888888;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         .warning {<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             font-size: 12px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             color: #777;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             margin-top: 15px;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         }<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                     &lt;/style&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;/head&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;body&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                     &lt;div class=&#039;email-container&#039;&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;div class=&#039;header&#039;&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;h2&gt;R&eacute;initialisation de votre mot de passe&lt;/h2&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;div class=&#039;content&#039;&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;Bonjour,&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;Nous avons re&ccedil;u une demande de r&eacute;initialisation de mot de passe pour votre compte sur le Portail &Eacute;tudiant.&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;Cliquez sur le bouton ci-dessous pour cr&eacute;er un nouveau mot de passe :&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;div style=&#039;text-align: center;&#039;&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                                 &lt;a href=&#039;http://localhost:3000/reset-password?token=7603e855e533ce0ac028c305d0b48057d76376dcaf82311fbdff21eb52438040&#039; class=&#039;button&#039;&gt;R&eacute;initialiser mon mot de passe&lt;/a&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;/div&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;Si vous n&#039;avez pas demand&eacute; cette r&eacute;initialisation, vous pouvez ignorer cet email en toute s&eacute;curit&eacute;.&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p class=&#039;warning&#039;&gt;Ce lien de r&eacute;initialisation expirera dans 1 heure pour des raisons de s&eacute;curit&eacute;.&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;div class=&#039;footer&#039;&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;Cet email a &eacute;t&eacute; envoy&eacute; automatiquement, merci de ne pas y r&eacute;pondre.&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                             &lt;p&gt;&amp;copy; 2025 Portail &Eacute;tudiant - Tous droits r&eacute;serv&eacute;s&lt;/p&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                     &lt;/div&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;/body&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 &lt;/html&gt;<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER:                 <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: --b1=_P8tG7sYYFqr4a5QIBILpN38zgmBznwS5lZv8rUCQWXI--<br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: <br>
+2025-04-19 20:51:45 CLIENT -&gt; SERVER: .<br>
+2025-04-19 20:51:46 SERVER -&gt; CLIENT: 250 2.0.0 OK  1745095904 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+2025-04-19 20:51:46 CLIENT -&gt; SERVER: QUIT<br>
+2025-04-19 20:51:46 SERVER -&gt; CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-4406e0056c0sm48746015e9.0 - gsmtp<br>
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=7603e855e533ce0ac028c305d0b48057d76376dcaf82311fbdff21eb52438040
+
+2025-05-05 13:18:48 - Tentative d'envoi d'email à amine.barradouane@etu.eilco.univ-littoral.fr
+2025-05-05 11:18:48 SERVER -&gt; CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+2025-05-05 11:18:48 CLIENT -&gt; SERVER: EHLO localhost<br>
+2025-05-05 11:18:48 SERVER -&gt; CLIENT: 250-smtp.gmail.com at your service, [92.158.8.51]250-SIZE 35882577250-8BITMIME250-STARTTLS250-ENHANCEDSTATUSCODES250-PIPELINING250-CHUNKING250 SMTPUTF8<br>
+2025-05-05 11:18:48 CLIENT -&gt; SERVER: STARTTLS<br>
+2025-05-05 11:18:48 SERVER -&gt; CLIENT: 220 2.0.0 Ready to start TLS<br>
+2025-05-05 11:18:48 CLIENT -&gt; SERVER: EHLO localhost<br>
+2025-05-05 11:18:48 SERVER -&gt; CLIENT: 250-smtp.gmail.com at your service, [92.158.8.51]250-SIZE 35882577250-8BITMIME250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH250-ENHANCEDSTATUSCODES250-PIPELINING250-CHUNKING250 SMTPUTF8<br>
+2025-05-05 11:18:48 CLIENT -&gt; SERVER: AUTH LOGIN<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 334 VXNlcm5hbWU6<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: [credentials hidden]<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 334 UGFzc3dvcmQ6<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: [credentials hidden]<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 235 2.7.0 Accepted<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: MAIL FROM:&lt;no-reply@portail.com&gt;<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: RCPT TO:&lt;amine.barradouane@etu.eilco.univ-littoral.fr&gt;<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: DATA<br>
+2025-05-05 11:18:49 SERVER -&gt; CLIENT: 354 Go ahead 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Date: Mon, 5 May 2025 13:18:48 +0200<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: To: amine.barradouane@etu.eilco.univ-littoral.fr<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: From: =?UTF-8?Q?Portail_=C3=89tudiant?= &lt;no-reply@portail.com&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Subject: =?UTF-8?Q?R=C3=A9initialisation_mot_de_passe?=<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Message-ID: &lt;LRcp1epKmx5sf0PDJCKaYpIoFX9HK8tXQBl7uvyAcOA@localhost&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: MIME-Version: 1.0<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Type: multipart/alternative;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:  boundary=&quot;b1=_LRcp1epKmx5sf0PDJCKaYpIoFX9HK8tXQBl7uvyAcOA&quot;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: --b1=_LRcp1epKmx5sf0PDJCKaYpIoFX9HK8tXQBl7uvyAcOA<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Type: text/plain; charset=UTF-8<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Bonjour,<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Nous avons re&ccedil;u une demande de r&eacute;initialisation de mot de passe pour votre compte sur le Portail &Eacute;tudiant.<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Pour r&eacute;initialiser votre mot de passe, veuillez cliquer sur le lien suivant ou le copier dans votre navigateur :<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: http://localhost:3000/reset-password?token=33040eb41036b53246c85dd80363ddfcb7aa1d8d9aa125b01d0bcc76eb1c1a54<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Si vous n&#039;avez pas demand&eacute; cette r&eacute;initialisation, vous pouvez ignorer cet email en toute s&eacute;curit&eacute;.<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Ce lien expirera dans 1 heure pour des raisons de s&eacute;curit&eacute;.<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Portail &Eacute;tudiant<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: --b1=_LRcp1epKmx5sf0PDJCKaYpIoFX9HK8tXQBl7uvyAcOA<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Type: text/html; charset=UTF-8<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: Content-Transfer-Encoding: 8bit<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;html&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;head&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                     &lt;style&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         body {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             font-family: Arial, sans-serif;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             line-height: 1.6;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             color: #333333;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .email-container {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             max-width: 600px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             margin: 0 auto;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             padding: 20px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             border: 1px solid #e4e4e4;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             border-radius: 5px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             background-color: #f9f9f9;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .header {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             text-align: center;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             padding: 20px 0;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             border-bottom: 2px solid #eaeaea;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .content {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             padding: 20px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             background-color: #ffffff;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             border-radius: 4px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .button {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             display: inline-block;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             padding: 12px 24px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             background-color: #4a86e8;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             color: #ffffff !important;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             text-decoration: none;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             border-radius: 4px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             font-weight: bold;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             margin: 20px 0;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .footer {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             margin-top: 20px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             text-align: center;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             font-size: 12px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             color: #888888;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         .warning {<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             font-size: 12px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             color: #777;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             margin-top: 15px;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         }<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                     &lt;/style&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;/head&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;body&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                     &lt;div class=&#039;email-container&#039;&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;div class=&#039;header&#039;&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;h2&gt;R&eacute;initialisation de votre mot de passe&lt;/h2&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;div class=&#039;content&#039;&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;Bonjour,&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;Nous avons re&ccedil;u une demande de r&eacute;initialisation de mot de passe pour votre compte sur le Portail &Eacute;tudiant.&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;Cliquez sur le bouton ci-dessous pour cr&eacute;er un nouveau mot de passe :&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;div style=&#039;text-align: center;&#039;&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                                 &lt;a href=&#039;http://localhost:3000/reset-password?token=33040eb41036b53246c85dd80363ddfcb7aa1d8d9aa125b01d0bcc76eb1c1a54&#039; class=&#039;button&#039;&gt;R&eacute;initialiser mon mot de passe&lt;/a&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;/div&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;Si vous n&#039;avez pas demand&eacute; cette r&eacute;initialisation, vous pouvez ignorer cet email en toute s&eacute;curit&eacute;.&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p class=&#039;warning&#039;&gt;Ce lien de r&eacute;initialisation expirera dans 1 heure pour des raisons de s&eacute;curit&eacute;.&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;div class=&#039;footer&#039;&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;Cet email a &eacute;t&eacute; envoy&eacute; automatiquement, merci de ne pas y r&eacute;pondre.&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                             &lt;p&gt;&amp;copy; 2025 Portail &Eacute;tudiant - Tous droits r&eacute;serv&eacute;s&lt;/p&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                         &lt;/div&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                     &lt;/div&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;/body&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 &lt;/html&gt;<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER:                 <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: --b1=_LRcp1epKmx5sf0PDJCKaYpIoFX9HK8tXQBl7uvyAcOA--<br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: <br>
+2025-05-05 11:18:49 CLIENT -&gt; SERVER: .<br>
+2025-05-05 11:18:50 SERVER -&gt; CLIENT: 250 2.0.0 OK  1746443929 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+2025-05-05 11:18:50 CLIENT -&gt; SERVER: QUIT<br>
+2025-05-05 11:18:50 SERVER -&gt; CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b2ad7931sm174874415e9.1 - gsmtp<br>
+
+Lien de réinitialisation: http://localhost:3000/reset-password?token=33040eb41036b53246c85dd80363ddfcb7aa1d8d9aa125b01d0bcc76eb1c1a54
+
